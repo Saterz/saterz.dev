@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CMPKHBNH4B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saterz's website</title>
+  <link rel="icon" type="image/x-icon" href="/pictures/icone.ico">
+  <meta name="description" content="Site de Saterz">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <!--Icône home-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <!--Icône contact-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-  gtag('config', 'G-CMPKHBNH4B');
-</script>
-<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Saterz website</title>
-    <meta name="description" content="Ceci est le site personnel de Saterz">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0">
-  </head>
+  <!--Icône à propos-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMPKHBNH4B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CMPKHBNH4B');
+  </script>
+</head>
+<body>
   <body>
-    <div id="construction">
-      <h1 id="construction_texte">
-        <span class="material-symbols-outlined">construction</span> En construction <span class="material-symbols-outlined">construction</span>
-      </h1>
-    </div>
-    <p id="liscence">© Copyright 2023 Saterz</p>
-  </body>
+    <header>
+        <h1 id="titre_principale">Saterz's Website</h1>
+        <br>
+        <nav>
+            <ul>
+                <li><span class="material-symbols-outlined">home</span><a href="/index.html">Accueil</a></li>
+                <li><span class="material-symbols-outlined">info</span><a href="/apropos.html">À propos</a></li>
+                <li><span class="material-symbols-outlined">alternate_email</span><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2 class="titres">Bienvenue sur mon site personnel</h2>
+        <p>On est censé mettre quoi ici ?</p>
+    </section>
+
+    <footer>
+        <p>© 2023 Saterz</p>
+    </footer>
+</body>
+</body>
 </html>
