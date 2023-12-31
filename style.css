@@ -27,6 +27,10 @@ header {
 }
 
 nav {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
   padding: 20px;
 }
 
@@ -40,15 +44,15 @@ nav a:hover {
   color: rgb(0, 255, 255);
 }
 
+.about, .portfolio {
+  padding: 30px 0;
+  text-align: center;
+}
+
 .hero {
   background-color: #f4f4f4;
   text-align: center;
   padding: 50px 0;
-}
-
-.about, .portfolio {
-  padding: 30px 0;
-  text-align: center;
 }
 
 .titres{
@@ -57,19 +61,26 @@ nav a:hover {
 
 footer {
   background-color: #000000;
-  color: #fff;
-  text-align: center;
   padding: 10px 0;
   position: fixed;
   width: 100%;
   bottom: 0;
 }
 
-.portfolio-item {
-  margin: 20px 0;
+#copyright {
+  color: #fff;
+  padding-left: 10px;
 }
 
-.portfolio-item img {
-  max-width: 100%;
-  height: auto;
+#opensource {
+  color: white;
+}
+
+.reseaux {
+  text-decoration: none;
+  color: #000000;
+}
+
+.reseaux:hover {
+  color: rgb(0, 110, 255);
 }
