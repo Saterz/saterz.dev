@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 
 * {
   margin: 0;
@@ -8,7 +9,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Tilt Neon', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -25,16 +26,13 @@ header {
   text-align: center;
 }
 
-nav ul {
+nav {
   list-style: none;
-}
-
-nav ul li {
   display: inline;
   margin-right: 20px;
 }
 
-nav ul li a {
+nav a {
   color: #fff;
   text-decoration: none;
 }
