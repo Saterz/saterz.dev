@@ -17,6 +17,7 @@ body {
 #titre_principale{
   font-family: 'VT323', monospace;
   color: rgb(0, 255, 255);
+  margin: 20px;
 }
 
 header {
@@ -24,24 +25,6 @@ header {
   color: #fff;
   padding: 10px 0;
   text-align: center;
-}
-
-nav {
-  background-color: #000000;
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
-  padding: 20px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  padding: 20px;
-}
-
-nav a:hover {
-  color: rgb(0, 255, 255);
 }
 
 .about, .portfolio {
@@ -77,7 +60,6 @@ footer {
 }
 
 .reseaux {
-  text-decoration: none;
   color: #000000;
 }
 
