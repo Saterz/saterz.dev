@@ -18,13 +18,17 @@ body {
   font-family: 'VT323', monospace;
   color: rgb(0, 255, 255);
   margin: 20px;
+  text-align: center;
+}
+
+#profile_pic {
+  border-radius: 50%;
 }
 
 header {
   background-color: #000000;
   color: #fff;
   padding: 10px 0;
-  text-align: center;
 }
 
 .about, .portfolio {
@@ -55,13 +59,14 @@ footer {
   color: #fff;
   padding-left: 10px;
   text-align: left;
-  padding-right: 87%;
 }
 
 #opensource {
   color: white;
   text-align: right;
   text-decoration: none;
+  position: absolute;
+  right: 10px;
 }
 
 #opensource:hover {
