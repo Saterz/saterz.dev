@@ -44,23 +44,33 @@ header {
 
 footer {
   background-color: #000000;
-  padding: 10px 0;
+  padding: 10px;
   position: fixed;
   width: 100%;
   bottom: 0;
+  display: flex;
 }
 
 #copyright {
   color: #fff;
   padding-left: 10px;
+  text-align: left;
+  padding-right: 87%;
 }
 
 #opensource {
   color: white;
+  text-align: right;
+  text-decoration: none;
+}
+
+#opensource:hover {
+  color: aqua;
 }
 
 .reseaux {
   color: #000000;
+  padding: 10px;
 }
 
 .reseaux:hover {
