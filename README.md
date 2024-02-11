@@ -10,17 +10,13 @@ Bienvenue sur mon site personnel ! Ce site est une vitrine pour partager mes pro
 
 Le site est divisé en plusieurs sections :
 
-- **Portfolio**: Une collection de mes projets passés et en cours.
-- **Blog**: Des articles sur mes découvertes, tutoriels et réflexions.
-- **À Propos**: Une brève présentation sur moi et mes compétences.
-- **Contact**: Un moyen de me contacter directement.
+- **À Propos**: Une brève présentation sur moi.
+- **Mes réseaux**: Une liste de mes réseaux.
 
 ## Technologies Utilisées
 
 - HTML5
-- CSS3 (avec préprocesseur SASS)
-- JavaScript (utilisation de Vue.js pour les interactions dynamiques)
-- Bootstrap pour la mise en page responsive
+- CSS3
 - Git pour la gestion de versionnement
 
 ## Comment Contribuer
@@ -42,10 +38,10 @@ Pour déployer ce site localement, suivez ces étapes :
 
 ## Auteur
 
-[Your Name](https://github.com/yourusername)
+[Saterz](https://github.com/Saterz)
 
 N'hésitez pas à me contacter si vous avez des questions ou des suggestions !
 
 ## Licence
 
-Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Pour l'instant il n'y a pas de liscence
