@@ -81,3 +81,12 @@ footer {
 .reseaux:hover {
   color: rgb(0, 110, 255);
 }
+
+.spoiler {
+  color: black; 
+  background-color: black;
+}
+
+.spoiler:hover {
+  background-color:white;
+}
