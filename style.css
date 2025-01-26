@@ -1,53 +1,169 @@
+/* Import Google Fonts for custom typography */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 
+/* Universal reset for consistent styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Default link styles */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Base font and sizing */
+html {
+  font-family: 'arial';
+  font-size: 16px;
+}
+
+/* Global body styles */
 body {
   font-family: 'Tilt Neon', sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-#titre_principale{
+/* Custom background container */
+.background--custom {
+  background-color: #FFFFFF;
+  width: 99.5vw;
+  height: 110vh;
+  position: absolute;
+  overflow: hidden;
+  z-index: -2;
+  top: 0;
+  left: 0;
+}
+
+/* Styling for the canvas element with gradient effects */
+canvas#canvas {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg) scale(2) translateY(0%);
+  --gradient-color-1: #6ABF88; 
+  --gradient-color-2: #9EEF46; 
+  --gradient-color-3: #1C0646;  
+  --gradient-color-4: #EBCDEC;
+  --gradient-speed: 0.000006;
+}
+
+/* Main title styling */
+#main_title {
   font-family: 'VT323', monospace;
-  color: rgb(0, 255, 255);
-  margin: 20px;
-  text-align: center;
+  color: white;
+  font-size: 5rem;
 }
 
+/* Blurred gradient section for visual enhancement */
+.blur-gradient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(30px);
+  padding-top: 55px;
+  padding-bottom: 55px;
+  color: black;
+}
+
+/* Styling for the title container */
+.box-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  color: black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the title container */
+.box-title:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(129, 124, 124, 0.3);
+}
+
+/* Profile picture styles */
 #profile_pic {
   border-radius: 50%;
 }
 
+/* Header section styles */
 header {
-  background-color: #000000;
-  color: #fff;
-  padding: 10px 0;
+  width: 99vw;
+  height: 105vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+/* About and portfolio sections */
 .about, .portfolio {
   padding: 30px 0;
   text-align: center;
 }
 
+/* Project cards container */
+.projects-cards {
+  display: flex;
+}
+
+/* Individual project card styles */
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  margin: 55px;
+  color: black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for project cards */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(129, 124, 124, 0.3);
+}
+
+/* Social media section styles */
+.social {
+  padding: 30px 0;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+/* Hero section styles */
 .hero {
-  background-color: #f4f4f4;
   text-align: center;
   padding: 50px 0;
 }
 
-.titres{
+/* Titles font family */
+.titles {
   font-family: 'Young Serif', serif;
 }
 
+/* Footer styles */
 footer {
-  background-color: #000000;
   padding: 10px;
   position: fixed;
   width: 100%;
@@ -55,14 +171,16 @@ footer {
   display: flex;
 }
 
+/* Footer elements alignment */
 #copyright {
-  color: #fff;
-  padding-left: 10px;
   text-align: left;
 }
 
+#version {
+  text-align: justify;
+}
+
 #opensource {
-  color: white;
   text-align: right;
   text-decoration: none;
   position: absolute;
@@ -73,6 +191,7 @@ footer {
   color: aqua;
 }
 
+/* Social media links hover effect */
 .reseaux {
   color: #000000;
   padding: 10px;
@@ -82,11 +201,13 @@ footer {
   color: rgb(0, 110, 255);
 }
 
+/* Spoiler text styles */
 .spoiler {
-  color: black; 
+  color: black;
   background-color: black;
 }
 
+/* Reveal spoiler text on hover */
 .spoiler:hover {
-  background-color:white;
+  background-color: rgba(255, 255, 255, 0);
 }

@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Saterz's website</title>
   <link rel="icon" type="image/x-icon" href="/pictures/icone.ico">
@@ -22,39 +21,104 @@
   </script>
 </head>
 <body>
+  <!-- Background section with a canvas for visual effects -->
+  <div class="background--custom">
+    <canvas id="canvas"></canvas>
+  </div>
+  <script src="https://cdn.jsdelivr.net/gh/greentfrapp/pocoloco@minigl/minigl.js"></script>
+  <script>
+    // Initialize the gradient effect on the canvas
+    var gradient = new Gradient();
+    gradient.initGradient("#canvas");
+  </script>
+
+  <!-- Header section with the website title -->
   <header>
-    <h1 id="titre_principale">Saterz's Website</h1>
+    <div class="box-title">
+      <h1 id="main_title">Saterz's Website</h1>
+    </div>
   </header>
 
-    <section class="hero">
-        <h2 class="titres">Bienvenue sur le meilleur site web d'internet</h2>
-        <p>On est censé mettre quoi ici ?</p>
-    </section>
+  <!-- Blurred gradient effect for visual enhancement -->
+  <div class="blur-gradient"></div>
 
-    <section class="about">
-      <h2 class="titres">À propos de moi</h2>
-      <br>
-      <p>Je m'appelle Ilan j'ai 14 ans et je suis en 2nde.</p>
-      <p>Je provient des Antilles Française. Je parle Français, Anglais et un petit peu de Creöle <p class="spoiler">(counia manmanw)</p>.</p>
-      <p>J'adore l'informatique, la musique, les livres (je vous conseille de lire Hunger Games) et les jeux vidéo.</p>
+  <!-- Hero section introducing the website -->
+  <section class="hero">
+    <h2 class="titles">Bienvenue sur le meilleur site web d'internet</h2>
+    <p>On est censé mettre quoi ici ?</p>
   </section>
 
+  <!-- About section with personal information -->
   <section class="about">
-    <h2 class="titres">Mes réseaux :</h2>
-    <br>
+  </br>
+    <h2 class="titles">À propos de moi</h2>
+    <p>Je m'appelle Ilan, j'ai 15 ans et je suis actuellement en classe de Seconde.<br>
+      Je viens des Antilles françaises et je parle français, anglais ainsi qu'un peu de créole <span class="spoiler">(counia manmanw)</span>.<br>
+      J'adore l'informatique, la musique, la lecture et bien sûr, les jeux vidéo.<br>
+      Fun fact : J'ai entamé la création de ce site en 2023, mais j'ai tellement procrastiné que je ne l'ai finalement achevé qu'en 2025…</p>
+  </section>
+
+  <!-- Portfolio section showcasing projects -->
+  <section class="portfolio">
+    <h2 class="titles">Mes projets :</h2>
+    <div class="projects-cards">
+
+      <!-- Deep Dive Project Card -->
+      <div class="card">
+        <a href="https://www.planet-casio.com/Fr/programmes/programme4347-1-deep-dive-validuser-jeux-actionsport.html"> 
+          <img src="pictures/Deep Dive.gif" alt="Deep Dive Game Art" style="width:50%">
+          <div class="container">
+            <h4><b>Deep Dive</b></h4>
+            <p>Un jeu sur calculatrice Casio<br>
+              créé lors d'un game jam organisé par<br>
+              Planet Casio, le CPC#30.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Proies Project Card -->
+      <div class="card">
+        <a href="https://www.planet-casio.com/Fr/programmes/programme4342-1-proies-validuser-jeux-directiontir.html">
+          <img src="pictures/Proies.gif" alt="Proies Game Art" style="width:75%">
+          <div class="container">
+            <h4><b>Proies</b></h4>
+            <p>Un jeu sur calculatrice Casio<br>
+              créé lors d'un game jam organisé par<br>
+              Planet Casio, le Chill Casio Game Jam.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Fall Up Project Card -->
+      <div class="card">
+        <a href="https://www.planet-casio.com/Fr/programmes/programme4362-1-fall-up-validuser-jeux-actionsport.html"> 
+          <img src="pictures/Fall_Up.gif" alt="Fall Up Game Art" style="width:100%">
+          <div class="container">
+            <h4><b>Fall Up</b></h4>
+            <p>Un jeu sur calculatrice Casio<br>
+              créé pour Planet Casio.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social media section with links to various platforms -->
+  <section class="social">
+    <h2 class="titles">Mes réseaux :</h2>
+    </br>
     <a href="https://steamcommunity.com/profiles/76561199196124877/" class="reseaux"><i class="fa-brands fa-steam fa-2xl"></i></a>
-    <a href="https://www.youtube.com/channel/UCmDDgiqASqBW7R-6VyZEMOg" class="reseaux"><i class="fa-brands fa-youtube fa-2xl"></i></a>
     <a href="https://open.spotify.com/user/nrba59p1hsbyx09hfwa3y6z0w?si=eeccb2637c1d4ec4" class="reseaux"><i class="fa-brands fa-spotify fa-2xl"></i></a>
     <a href="https://twitter.com/Saterz_" class="reseaux"><i class="fa-brands fa-x-twitter fa-2xl"></i></a>
-    <a href="https://www.twitch.tv/saterz_" class="reseaux"><i class="fa-brands fa-twitch fa-2xl"></i></a>
     <a href="https://www.reddit.com/u/Intrepid_Definition5" class="reseaux"><i class="fa-brands fa-reddit-alien fa-2xl"></i></a>
     <a href="https://discordapp.com/users/655805199801385007" class="reseaux"><i class="fa-brands fa-discord fa-2xl"></i></a>
-    <a href="https://www.tiktok.com/@saterz_" class="reseaux"><i class="fa-brands fa-tiktok fa-2xl"></i></a>
-    <a href="https://www.threads.net/@saterz" class="reseaux"><i class="fa-brands fa-threads fa-2xl"></i></a>
   </section>
 
-    <footer>
-        <p id="copyright">© 2023 Saterz</p><a href="https://github.com/Saterz/saterz.github.io" target="_blank" id="opensource">Source on GitHub</a>
-    </footer>
+  <!-- Footer with copyright and version information -->
+  <footer>
+    <p id="copyright">© 2025 Saterz</p>
+    <p id="version">v1.0</p>
+    <a href="https://github.com/Saterz/saterz.github.io" target="_blank" id="opensource">Source on GitHub</a>
+  </footer>
 </body>
 </html>
