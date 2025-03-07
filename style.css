@@ -22,6 +22,7 @@ html {
   font-size: 16px;
 }
 
+
 /* Global body styles */
 body {
   font-family: 'Tilt Neon', sans-serif;
@@ -64,7 +65,7 @@ canvas#canvas {
 }
 
 /* Blurred gradient section for visual enhancement */
-.blur-gradient {
+#blur-gradient {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,6 +74,7 @@ canvas#canvas {
   padding-top: 55px;
   padding-bottom: 55px;
   color: black;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
 }
 
 /* Styling for the title container */
@@ -111,11 +113,91 @@ header {
   text-align: center;
 }
 
+/* Overall section styling */
+#about {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Container to layout content boxes responsively */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Frosted-glass effect for each content box */
+.content-box {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 350px;
+  flex: 1 1 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Smooth hover animation */
+.content-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Content box titles */
+.content-box h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+/* Content box paragraphs */
+.content-box p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Section title styling */
+#about .titles {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
 /* About and portfolio sections */
-.about, .portfolio {
+#portfolio {
   padding: 30px 0;
   text-align: center;
 }
+
+#planet-casio, #web, #android {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+
+#PC, #androidstudio {
+  border-radius: 10%;
+  transition: 0.3s ease;
+  margin-right: 20px;
+  filter: grayscale(100%);
+}
+
+#PC:hover, #androidstudio:hover {
+  filter: grayscale(0%);
+}
+
+#webPic {
+  border-radius: 100%;
+  margin-right: 20px;
+  transition: 0.3s ease;
+}
+
+#webPic:hover {
+  filter: invert(7%) sepia(99%) saturate(6887%) hue-rotate(247deg) brightness(110%) contrast(145%);
+}
+
 
 /* Project cards container */
 .projects-cards {
@@ -135,7 +217,7 @@ header {
   padding: 15px;
   margin: 55px;
   color: black;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s ease;
 }
 
 /* Hover effect for project cards */
@@ -144,18 +226,20 @@ header {
   box-shadow: 0 20px 30px rgba(129, 124, 124, 0.3);
 }
 
+
 /* Social media section styles */
-.social {
+#social {
   padding: 30px 0;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   text-align: center;
 }
 
 /* Hero section styles */
-.hero {
+#hero {
   text-align: center;
   padding: 50px 0;
 }
+
 
 /* Titles font family */
 .titles {
@@ -164,47 +248,57 @@ header {
 
 /* Footer styles */
 footer {
-  padding: 10px;
+  padding: 10px 20px;
   position: fixed;
   width: 100%;
   bottom: 0;
   display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
 }
 
 /* Footer elements alignment */
 #copyright {
   text-align: left;
+  flex: 1; /* Pushes content to the left */
 }
 
 #version {
-  text-align: justify;
+  text-align: center;
+  flex: 1; /* Centered content */
 }
 
 #opensource {
   text-align: right;
   text-decoration: none;
-  position: absolute;
-  right: 10px;
+  flex: 1; /* Pushes content to the right */
 }
 
 #opensource:hover {
-  color: aqua;
+  transition: 0.3s ease;
+  color: grey;
 }
+
 
 /* Social media links hover effect */
 .reseaux {
-  color: #000000;
-  padding: 10px;
+  color: black;
+  padding: 20px;
 }
 
 .reseaux:hover {
-  color: rgb(0, 110, 255);
+  color: white;
+  border: grey 1px;
+  border-radius: 10%;
+  background-color: grey;
 }
+
 
 /* Spoiler text styles */
 .spoiler {
   color: black;
   background-color: black;
+  transition: 0.2s ease;
 }
 
 /* Reveal spoiler text on hover */
