@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <!-- Unami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="14a3468f-cac2-44a8-996e-c8ed32156037"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saterz's website</title>
+  <meta name="description" content="Le site web de Saterz">
+  <link rel="icon" type="image/x-icon" href="/pictures/icone.ico">
+  <meta name="description" content="Site de Saterz">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="https://kit.fontawesome.com/bfa978807b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="content">
+    <!-- Background section with a canvas for visual effects -->
+    <div class="background--custom">
+      <canvas id="canvas"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/greentfrapp/pocoloco@minigl/minigl.js"></script>
+    <script>
+      // Initialize the gradient effect on the canvas
+      var gradient = new Gradient();
+      gradient.initGradient("#canvas");
+    </script>
+
+    <!-- Header section with the website title -->
+    <header>
+      <div class="box-title">
+        <h1 id="main_title">Saterz's Website</h1>
+      </div>
+    </header>
+
+    <div id="body">
+      <!-- Blurred gradient effect for visual enhancement -->
+      <div id="blur-gradient"></div>
+
+      <div id="background">
+        <!-- <nav>
+          <ul>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#portfolio">Projets</a></li>
+            <li><a href="#social">Réseaux</a></li>
+          </ul>
+          <div id="theme-switcher">
+            <i class="fa-solid fa-sun fa-2xl"></i>
+          </div>
+        </nav> -->
+
+        <!-- Hero section introducing the website -->
+        <section id="hero">
+          <h2 class="titles">Bienvenue sur le meilleur site web d'internet</h2>
+          <p>On est censé mettre quoi ici ?</p>
+        </section>
+
+        <!-- About section with personal information -->
+        <section id="about">
+          <h2 class="titles">À propos de moi</h2>
+          <div class="about-container">
+            <div class="content-box">
+              <h3>Identité</h3>
+              <p>Je m'appelle Ilan, j'ai 15 ans et je suis actuellement en classe de Seconde.</p>
+            </div>
+            <div class="content-box">
+              <h3>Origine & Langues</h3>
+              <p>Je viens des Antilles françaises et je parle français, anglais ainsi qu'un peu de créole <span
+                  class="spoiler">(counia manmanw)</span>.</p>
+            </div>
+            <div class="content-box">
+              <h3>Centres d'intérêt</h3>
+              <p>J'adore l'informatique, la musique, la lecture et bien sûr, les jeux vidéo.</p>
+            </div>
+            <div class="content-box">
+              <h3>Fun Fact</h3>
+              <p>J'ai entamé la création de ce site en 2023, mais j'ai tellement procrastiné que je ne l'ai finalement
+                achevé
+                qu'en 2025…</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Portfolio section showcasing projects -->
+        <section id="portfolio">
+          <h2 class="titles">Mes projets :</h2>
+          <div id="planet-casio">
+            <a href="https://www.planet-casio.com/Fr/compte/voir_profil.php?membre=validuser">
+              <img src="/pictures/planetCasio.webp" id="PC" alt="Planet Casio Logo" width="250" height="250">
+            </a>
+            <div class="projects-cards">
+              <!-- Deep Dive Project Card -->
+              <div class="card">
+                <a
+                  href="https://www.planet-casio.com/Fr/programmes/programme4347-1-deep-dive-validuser-jeux-actionsport.html">
+                  <img src="pictures/Deep Dive.gif" alt="Deep Dive Game Art" width="50%">
+                  <div class="container">
+                    <h4><b>Deep Dive</b></h4>
+                    <p>Un jeu sur calculatrice Casio créé lors d'un game jam organisé par Planet Casio, le CPC#30.</p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Proies Project Card -->
+              <div class="card">
+                <a
+                  href="https://www.planet-casio.com/Fr/programmes/programme4342-1-proies-validuser-jeux-directiontir.html">
+                  <img src="pictures/Proies.gif" alt="Proies Game Art" width="50%">
+                  <div class="container">
+                    <h4><b>Proies</b></h4>
+                    <p>Un jeu sur calculatrice Casio créé lors d'un game jam organisé par Planet Casio, le Chill Casio
+                      Game
+                      Jam.</p>
+                  </div>
+                </a>
+              </div>
+              <!-- Fall Up Project Card -->
+              <div class="card">
+                <a
+                  href="https://www.planet-casio.com/Fr/programmes/programme4362-1-fall-up-validuser-jeux-actionsport.html">
+                  <img src="pictures/Fall_Up.gif" alt="Fall Up Game Art" width="75%">
+                  <div class="container">
+                    <h4><b>Fall Up</b></h4>
+                    <p>Un jeu sur calculatrice Casio créé pour Planet Casio.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div id="web">
+            <a href="https://www.google.com">
+              <img src="/pictures/worldwide.webp" id="webPic" alt="Web globe icon" width="250" height="250">
+            </a>
+            <div class="projects-cards">
+              <div class="card">
+                <a href="https://saterz.github.io/">
+                  <img src="pictures/Saterz's website.webp" alt="Screenshot Saterz's Website" width="50%">
+                  <div class="container">
+                    <h4><b>Saterz's Website</b></h4>
+                    <p>Oui, ce site web à été coder de A à Z par moi</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="card">
+                <a href="https://saterz.github.io/ActusJeuxSNT">
+                  <img src="pictures/ActusJeux.webp" alt="Screenshot ActusJeuxSNT" width="50%">
+                  <div class="container">
+                    <h4><b>ActusJeuxSNT</b></h4>
+                    <p>Un site web développé dans le cadre d'un projet évalué en classe de Sciences Numériques et
+                      Technologie
+                      (SNT).</p>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="android">
+            <a href="https://www.google.com">
+              <img src="/pictures/androidStudio.webp" id="androidstudio" alt="Android Studio Icon" width="250"
+                height="250">
+            </a>
+            <div class="projects-cards">
+              <div class="card">
+                <a href="https://github.com/Saterz/Samsung-Music-but-better">
+                  <img src="pictures/placeholder.webp" alt="Placeholder" width="50%">
+                  <div class="container">
+                    <h4><b>Samsung Music, but better</b></h4>
+                    <p>En train d'être développer en ce moment même. Plus d'info à venir.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Social media section with links to various platforms -->
+        <section id="social">
+          <h2 class="titles">Mes réseaux :</h2>
+          </br>
+          <!-- Steam -->
+          <a href="https://steamcommunity.com/profiles/76561199196124877/" class="reseaux">
+            <i class="fa-brands fa-steam fa-2xl"></i>
+          </a>
+          <!-- Spotify -->
+          <a href="https://open.spotify.com/user/nrba59p1hsbyx09hfwa3y6z0w?si=eeccb2637c1d4ec4" class="reseaux">
+            <i class="fa-brands fa-spotify fa-2xl"></i>
+          </a>
+          <!-- Twitter -->
+          <a href="https://twitter.com/Saterz_" class="reseaux">
+            <i class="fa-brands fa-x-twitter fa-2xl"></i>
+          </a>
+          <!-- Reddit -->
+          <a href="https://www.reddit.com/u/Intrepid_Definition5" class="reseaux">
+            <i class="fa-brands fa-reddit-alien fa-2xl"></i>
+          </a>
+          <!-- Discord -->
+          <a href="https://discordapp.com/users/655805199801385007" class="reseaux">
+            <i class="fa-brands fa-discord fa-2xl"></i>
+          </a>
+          <!-- Last FM -->
+          <a href="https://www.last.fm/user/Saterz_" class="reseaux">
+            <i class="fa-brands fa-lastfm fa-2xl"></i>
+          </a>
+          <!-- Github -->
+          <a href="https://github.com/Saterz" class="reseaux">
+            <i class="fa-brands fa-github fa-2xl"></i>
+          </a>
+          <!-- Goodreads -->
+          <a href="https://www.goodreads.com/user/show/173750879-saterz" class="reseaux">
+            <i class="fa-brands fa-goodreads-g fa-2xl"></i>
+          </a>
+          <!-- Threads -->
+          <a href="https://www.threads.net/@saterz_" class="reseaux">
+            <i class="fa-brands fa-threads fa-2xl"></i>
+          </a>
+          <!-- Bluesky -->
+          <a href="https://bsky.app/profile/saterz.bsky.social" class="reseaux">
+            <i class="fa-brands fa-bluesky fa-2xl"></i>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/saterz_/" class="reseaux">
+            <i class="fa-brands fa-instagram fa-2xl"></i>
+          </a>
+        </section>
+
+
+        <!-- Footer with copyright and version information -->
+        <footer>
+          <p id="copyright">© 2023-2025 Saterz</p>
+          <p id="version">v2.1.1 (Preview) - <a href="old-website/old-index.html">Old website</a></p>
+          <a href="https://github.com/Saterz/saterz.github.io" target="_blank" id="opensource">Source on GitHub</a>
+        </footer>
+      </div> <!-- End of the background div -->
+    </div> <!-- End of the body div -->
+  </div> <!-- End of the content div -->
+    <div id="wrong-aspect-ratio">
+      <p>Je suis désolé, mais le ratio de votre écran n'est pas encore pris en charge. Veuillez redimensionner votre écran ou utiliser un autre appareil. En attendant vous pouvez allez sur l'ancienne version du site en cliquant <a href="old-website/old-index.html">ici</a>.</p>
+    </div>
+</body>
+
+</html>

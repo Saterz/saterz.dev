@@ -1,5 +1,4 @@
 /* Import Google Fonts for custom typography */
-
 /* Font : VT323 */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 /* Font : Young Serif */
@@ -9,27 +8,32 @@
 /* Font : Barrio */
 @import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
 
-@media (max-width: 402px) {
-  #nav-buttons li {
-    padding: 20px 0;
-  }
+#wrong-aspect-ratio {
+  display: none;
 }
 
-@media (max-width: 414px) {
-  footer {
-    flex-direction: column;
+@media (max-width: 768px) {
+  /* Disable scrolling altogether */
+  html, body {
+    overflow: hidden;
   }
-}
-
-@media (max-width: 850px) {
-  #social i {
-    padding: 25px;
-  }
-}
-
-@media (max-width: 912px) {
-  #main-title-container {
-    margin-bottom: 20px;
+  
+  /* Instead of hiding #content, show an overlay message */
+  #wrong-aspect-ratio {
+    display: flex; /* Allows center alignment */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white; /* White background behind text */
+    color: red;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 9999; /* Ensure overlay is on top */
+    padding: 1rem;
   }
 }
 
@@ -57,14 +61,51 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  transition: 0.3s ease;
+}
+
+/* Custom background container */
+.background--custom {
+  background-color: #FFFFFF;
+  width: 110vw;
+  height: 105vh;
+  position: fixed;
+  overflow: hidden;
+  z-index: -2;
+  top: 0;
+  left: 0;
+}
+
+/* Styling for the canvas element with gradient effects */
+canvas#canvas {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg) scale(2) translateY(0%);
+  --gradient-color-1: #6ABF88;
+  --gradient-color-2: #9EEF46;
+  --gradient-color-3: #1C0646;
+  --gradient-color-4: #EBCDEC;
+  --gradient-speed: 0.000006;
 }
 
 /* Main title styling */
 #main_title {
   font-family: 'VT323', monospace;
-  color: black;
+  color: white;
   font-size: 5rem;
+}
+
+/* Blurred gradient section for visual enhancement */
+#blur-gradient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(30px);
+  padding: 55px;
+  color: black;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
 }
 
 /* Styling for the title container */
@@ -87,62 +128,57 @@ body {
 }
 
 nav {
-  top: 0;
-  width: 100%;
+  position: relative;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  /* Space out the three sections */
+  justify-content: center;
   align-items: center;
-  padding: 20px 30px;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(14px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transition: 0.4s ease;
+  padding: 30px;
 }
 
-/* Navigation Buttons Styling */
-#nav-buttons ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-#nav-buttons li {
+nav li {
+  display: inline;
   margin: 0 10px;
+  margin-top: 20px;
 }
 
 nav li a {
   color: black;
-  text-decoration: none;
   border: solid black;
   border-radius: 10px;
-  padding: 10px 15px;
+  padding: 15px;
   transition: 0.3s ease;
 }
 
 nav li a:hover {
   border-radius: 15px;
+  transition: 0.3s ease;
 }
-
-/* Theme Switcher Styling */
-/* #theme-switcher {
-  color: black;
-} */
 
 /* Header section styles */
 header {
-  position: fixedz;
+  width: 100vw;
+  height: 105vh;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-#content {
+#body {
   z-index: 0;
   position: absolute;
-  /*margin-top: 50%;*/
+  margin-top: 50%;
+}
+
+#background {
+  margin-top: 0px;
+  background-color: white;
+}
+
+#theme-switcher {
+  position: absolute;
+  right: 30px;
 }
 
 /* Overall section styling */
@@ -157,7 +193,6 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin: 0 20px;
 }
 
 /* Frosted-glass effect for each content box */
@@ -231,29 +266,20 @@ header {
 /* Project cards container */
 .projects-cards {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin: 40px 20px;
-  /* Center the container horizontally */
-  text-align: center;
 }
 
 /* Individual project card styles */
 .card {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 250px;
+  flex-direction: column;
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   border-radius: 15px;
   backdrop-filter: blur(14px);
   background-color: rgba(255, 255, 255, 0.2);
   padding: 15px;
+  margin: 55px;
   color: black;
   transition: 0.3s ease;
 }
@@ -267,6 +293,7 @@ header {
 /* Social media section styles */
 #social {
   padding: 30px 0;
+  padding-bottom: 100px;
   text-align: center;
 }
 
@@ -286,29 +313,42 @@ header {
 /* Footer styles */
 footer {
   padding: 10px 20px;
+  position: fixed;
   width: 100%;
   bottom: 0;
   display: flex;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(14px);
-  transition: 0.4s ease;
 }
 
 /* Footer elements alignment */
-#copyright-container {
+#copyright {
   text-align: left;
   flex: 1;
+  /* Pushes content to the left */
 }
 
-#version-container {
+#version {
   text-align: center;
   flex: 1;
+  /* Centered content */
 }
 
-#opensource-container {
+#version a:hover {
+  color: grey;
+  transition: 0.3s ease;
+}
+
+#opensource {
   text-align: right;
   text-decoration: none;
   flex: 1;
+  /* Pushes content to the right */
+}
+
+#opensource:hover {
+  transition: 0.3s ease;
+  color: grey;
 }
 
 /* Social media links hover effect */
