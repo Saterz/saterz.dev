@@ -136,7 +136,7 @@ nav li a:hover {
 
 /* Header section styles */
 header {
-  position: fixedz;
+  position: fixed;
 }
 
 #content {
@@ -268,6 +268,7 @@ header {
 #social {
   padding: 30px 0;
   text-align: center;
+  padding-bottom: 75px;
 }
 
 /* Hero section styles */
@@ -292,6 +293,7 @@ footer {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(14px);
   transition: 0.4s ease;
+  position: fixed;
 }
 
 /* Footer elements alignment */
@@ -334,4 +336,43 @@ footer {
 /* Reveal spoiler text on hover */
 .spoiler:hover {
   background-color: rgba(255, 255, 255, 0);
+}
+
+#menu-button {
+  width: 49px;
+  height: 49px;
+  cursor: pointer;
+  position: fixed;
+  padding: 10px;
+  background-color: rgba(153, 153, 153, 0.5);
+  border-radius: 50%;
+  bottom: 35px;
+  right: 10px;
+  z-index: 5;
+  backdrop-filter: blur(14px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-button i {
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.menu-container {
+  opacity: 0;
+  pointer-events: none;
+  padding: 20px;
+  position: fixed;
+  border-radius: 15px;
+  bottom: 100px;
+  right: 10px;
+  z-index: 5;
+  background-color: rgba(153, 153, 153, 0.5);
+  backdrop-filter: blur(14px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
 }
