@@ -1,4 +1,4 @@
-# Mon Site Personnel
+<!-- # Mon Site Personnel
 
 Bienvenue sur mon site personnel ! Ce site est une vitrine pour partager mes projets et faire des expériences.
 
@@ -38,4 +38,4 @@ N'hésitez pas à me contacter si vous avez des questions ou des suggestions !
 
 ## Licence
 
-Pour l'instant il n'y a pas de liscence
+Pour l'instant il n'y a pas de liscence -->
