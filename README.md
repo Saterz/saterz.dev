@@ -1,6 +1,6 @@
-<!-- # Mon Site Personnel
+### Mon Site Personnel
 
-Bienvenue sur mon site personnel ! Ce site est une vitrine pour partager mes projets et faire des expériences.
+<!-- Bienvenue sur mon site personnel ! Ce site est une vitrine pour partager mes projets et faire des expériences.
 
 ## Aperçu
 
