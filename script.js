@@ -54,6 +54,8 @@
 //     }
 // }
 
+
+// Menu button
 const menuButton = document.getElementById('menu-button');
 const menuIcon = document.querySelector('.fa-bars');
 const menuContainer = document.querySelector('.menu-container');

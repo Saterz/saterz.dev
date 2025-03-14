@@ -6,12 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 /* Font : Tilt Neon */
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-/* Font : Teko */
+/* Font : Crimson Text */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap');
 
 @media (max-width: 402px) {
   #nav-buttons li {
-    padding: 20px 0;
+    padding: 2rem 0;
   }
 }
 
@@ -22,19 +22,19 @@
   }
   
   footer div {
-    padding: 10px 0;
+    padding: 1rem 0;
   }
 }
 
 @media (max-width: 850px) {
   #social i {
-    padding: 25px;
+    padding: 2.5rem;
   }
 }
 
 @media (max-width: 912px) {
   #main-title-container {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
   }
 }
 
@@ -53,14 +53,13 @@ a {
 
 /* Base font and sizing */
 html {
-  font-size: 16px;
+  font-size: 62.5%;
 }
 
 /* Global body styles */
 body {
   font-family: 'Tilt Neon', sans-serif;
-  margin: 0;
-  padding: 0;
+  font-size: 1.6rem;
   overflow-x: hidden;
   transition: 0.3s ease;
 }
@@ -69,7 +68,7 @@ body {
 #main_title {
   font-family: 'VT323', monospace;
   color: black;
-  font-size: 5rem;
+  font-size: 8rem;
 }
 
 /* Styling for the title container */
@@ -87,7 +86,7 @@ nav {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 2rem 3rem;
   backdrop-filter: blur(14px);
   transition: 0.4s ease;
 }
@@ -103,30 +102,20 @@ nav {
 }
 
 #nav-buttons li {
-  margin: 0 10px;
+  margin: 0 1rem;
 }
 
 nav li a {
   color: black;
   text-decoration: none;
   border: solid black;
-  border-radius: 10px;
-  padding: 10px 15px;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
   transition: 0.3s ease;
 }
 
 nav li a:hover {
-  border-radius: 15px;
-}
-
-/* Theme Switcher Styling */
-/* #theme-switcher {
-  color: black;
-} */
-
-/* Header section styles */
-header {
-  position: fixed;
+  border-radius: 1.5rem;
 }
 
 #content {
@@ -137,180 +126,146 @@ header {
 
 /* Overall section styling */
 #about {
-  padding: 30px 0;
+  padding: 3rem 0;
   text-align: center;
 }
 
 /* Container to layout content boxes responsively */
-.about-container {
+#about-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  margin: 0 20px;
-}
-
-/* Frosted-glass effect for each content box */
-.content-box {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-  border-radius: 15px;
-  padding: 1.5rem;
-  max-width: 350px;
-  flex: 1 1 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Smooth hover animation */
-.content-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  gap: 1.6rem;
+  margin: 0 2rem;
 }
 
 /* Content box titles */
-.content-box h3 {
+.card-titles {
   margin-top: 0;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
 }
 
 /* Content box paragraphs */
-.content-box p {
-  font-size: 1rem;
+.card-content {
+  font-size: 1.6rem;
   line-height: 1.6;
 }
 
 /* About and portfolio sections */
 #portfolio {
-  padding: 30px 0;
+  padding: 3rem 0;
   text-align: center;
 }
 
-#planet-casio,
-#web,
-#android {
-  display: flex;
-  align-items: center;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-#PC,
-#androidstudio {
-  border-radius: 10%;
-  transition: 0.3s ease;
-  margin-right: 20px;
-  filter: grayscale(100%);
-}
-
-#PC:hover,
-#androidstudio:hover {
-  filter: grayscale(0%);
-}
-
-#webPic {
-  border-radius: 100%;
-  margin-right: 20px;
-  transition: 0.3s ease;
-}
-
-#webPic:hover {
-  filter: invert(7%) sepia(99%) saturate(6887%) hue-rotate(247deg) brightness(110%) contrast(145%);
-}
-
 /* Project cards container */
-.projects-cards {
+#projects-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin: 40px 20px;
-  /* Center the container horizontally */
+  gap: 2rem;
+  margin: 4rem 2rem;
   text-align: center;
 }
 
+/* Frosted-glass effect for each content box */
+.about-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1.5rem 2.5rem rgba(129, 124, 124, 0.2);
+  border-radius: 1.5rem;
+  padding: 2.4rem;
+  max-width: 35rem;
+  flex: 1 1 30rem;
+  transition: 0.3s ease;
+}
+
+/* Smooth hover animation */
+.about-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
+}
+
 /* Individual project card styles */
-.card {
+.projects-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 250px;
-  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-  border-radius: 15px;
+  width: 30rem;
+  height: 30rem;
+  box-shadow: 0 1.5rem 2.5rem rgba(129, 124, 124, 0.2);
+  border-radius: 1.5rem;
   backdrop-filter: blur(14px);
   background-color: rgba(255, 255, 255, 0.2);
-  padding: 15px;
+  padding: 1.5rem;
   color: black;
   transition: 0.3s ease;
 }
 
 /* Hover effect for project cards */
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 30px rgba(129, 124, 124, 0.3);
+.projects-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 /* Social media section styles */
 #social {
-  padding: 30px 0;
+  padding: 3rem 0;
   text-align: center;
-  padding-bottom: 75px;
+  padding-bottom: 7.5rem;
 }
 
 /* Hero section styles */
 #hero {
   text-align: center;
-  padding: 30px 0;
+  padding: 3rem 0;
 }
 
 /* Titles font family */
 .titles {
   font-family: 'Young Serif', serif;
-  font-size: 32px;
-  margin-bottom: 1.5rem;
+  font-size: 3.2rem;
+  margin-bottom: 2.4rem;
 }
 
 /* Footer styles */
 footer {
-  padding: 10px 20px;
-  width: 100%;
+  padding: 1rem 2rem;
   bottom: 0;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(14px);
   transition: 0.4s ease;
 }
 
 /* Footer elements alignment */
 #copyright-container {
-  text-align: left;
+  order: 1;
   flex: 1;
+  text-align: left;
 }
 
 #version-container {
-  text-align: center;
+  order: 2;
   flex: 1;
+  text-align: center;
 }
 
 #opensource-container {
-  text-align: right;
-  text-decoration: none;
+  order: 3;
   flex: 1;
+  text-align: right;
+  text-decoration: line;
 }
 
 /* Social media links hover effect */
 .reseaux {
   color: black;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .reseaux:hover {
   color: white;
-  border: grey 1px;
   border-radius: 10%;
   background-color: grey;
   transition: 0.3s ease;
@@ -329,15 +284,15 @@ footer {
 }
 
 #menu-button {
-  width: 49px;
-  height: 49px;
+  width: 4.9rem;
+  height: 4.9rem;
   cursor: pointer;
   position: fixed;
-  padding: 10px;
+  padding: 1rem;
   background-color: rgba(153, 153, 153, 0.5);
   border-radius: 50%;
-  bottom: 35px;
-  right: 10px;
+  bottom: 3.5rem;
+  right: 1rem;
   z-index: 5;
   backdrop-filter: blur(14px);
   display: flex;
@@ -353,11 +308,11 @@ footer {
 .menu-container {
   opacity: 0;
   pointer-events: none;
-  padding: 20px;
+  padding: 2rem;
   position: fixed;
-  border-radius: 15px;
-  bottom: 100px;
-  right: 10px;
+  border-radius: 1.5rem;
+  bottom: 10rem;
+  right: 1rem;
   z-index: 5;
   background-color: rgba(153, 153, 153, 0.5);
   backdrop-filter: blur(14px);
