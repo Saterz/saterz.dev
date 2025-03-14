@@ -9,6 +9,8 @@
   <meta name="description" content="Le site web de Saterz">
   <link rel="icon" type="image/x-icon" href="https://saterz.github.io/pictures/icone.ico">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="modern-normalize.css">
+</head>
 
 <body>
   <nav>
@@ -44,20 +46,20 @@
     <h2 class="titles">À propos de moi</h2>
     <div class="about-container">
       <div class="content-box">
-        <h3>Identité</h3>
+        <h3 class="card-titles">Identité</h3>
         <p>Je m'appelle Ilan, j'ai 15 ans et je suis actuellement en classe de Seconde.</p>
       </div>
       <div class="content-box">
-        <h3>Origine & Langues</h3>
+        <h3 class="card-titles">Origine & Langues</h3>
         <p>Je viens des Antilles françaises et je parle français, anglais ainsi qu'un peu de créole <span
             class="spoiler">(counia manmanw)</span>.</p>
       </div>
       <div class="content-box">
-        <h3>Centres d'intérêt</h3>
+        <h3 class="card-titles">Centres d'intérêt</h3>
         <p>J'adore l'informatique, la musique, la lecture et bien sûr, les jeux vidéo.</p>
       </div>
       <div class="content-box">
-        <h3>Fun Fact</h3>
+        <h3 class="card-titles">Fun Fact</h3>
         <p>J'ai entamé la création de ce site en 2023, mais j'ai tellement procrastiné que je ne l'ai finalement
           achevé
           qu'en 2025…</p>
@@ -74,7 +76,7 @@
         <a href="https://www.planet-casio.com/Fr/programmes/programme4347-1-deep-dive-validuser-jeux-actionsport.html">
           <img src="pictures/Deep Dive.gif" alt="Deep Dive Game Art" width="75%">
           <div class="container">
-            <h4><b>Deep Dive</b></h4>
+            <h3 class="card-titles"><b>Deep Dive</b></h3>
             <p>Un jeu sur calculatrice Casio créé lors d'un game jam organisé par Planet Casio, le CPC#30.</p>
           </div>
         </a>
@@ -85,7 +87,7 @@
         <a href="https://www.planet-casio.com/Fr/programmes/programme4342-1-proies-validuser-jeux-directiontir.html">
           <img src="pictures/Proies.gif" alt="Proies Game Art" width="75%">
           <div class="container">
-            <h4><b>Proies</b></h4>
+            <h3 class="card-titles"><b>Proies</b></h3>
             <p>Un jeu sur calculatrice Casio créé lors d'un game jam organisé par Planet Casio, le Chill Casio Game
               Jam.</p>
           </div>
@@ -97,7 +99,7 @@
         <a href="https://www.planet-casio.com/Fr/programmes/programme4362-1-fall-up-validuser-jeux-actionsport.html">
           <img src="pictures/Fall_Up.gif" alt="Fall Up Game Art" width="75%">
           <div class="container">
-            <h4><b>Fall Up</b></h4>
+            <h3 class="card-titles"><b>Fall Up</b></h3>
             <p>Un jeu sur calculatrice Casio créé pour Planet Casio.</p>
           </div>
         </a>
@@ -108,7 +110,7 @@
         <a href="https://saterz.github.io/">
           <img src="pictures/Saterz's website.webp" alt="Screenshot Saterz's Website" width="75%">
           <div class="container">
-            <h4><b>Saterz's Website</b></h4>
+            <h3 class="card-titles"><b>Saterz's Website</b></h3>
             <p>Oui, ce site web a été codé de A à Z par moi</p>
           </div>
         </a>
@@ -119,7 +121,7 @@
         <a href="https://saterz.github.io/ActusJeuxSNT">
           <img src="pictures/ActusJeux.webp" alt="Screenshot ActusJeuxSNT" width="75%">
           <div class="container">
-            <h4><b>ActusJeuxSNT</b></h4>
+            <h3 class="card-titles"><b>ActusJeuxSNT</b></h3>
             <p>Un site web développé dans le cadre d'un projet évalué en classe de Sciences Numériques et Technologie
               (SNT).</p>
           </div>
@@ -131,7 +133,7 @@
         <a href="https://github.com/Saterz/Samsung-Music-but-better">
           <img src="pictures/placeholder.webp" alt="Placeholder" width="75%">
           <div class="container">
-            <h4><b>Samsung Music, but better</b></h4>
+            <h3 class="card-titles"><b>Samsung Music, but better</b></h3>
             <p>En train d'être développer en ce moment même. Plus d'info à venir.</p>
           </div>
         </a>
@@ -197,17 +199,20 @@
     <i class="fa-solid fa-bars fa-2x"></i>
   </div>
 
+  <hr />
+
   <!-- Footer with copyright and version information -->
   <footer>
     <div id="copyright-container">
       <p id="copyright">© 2023-2025 Saterz</p>
     </div>
     <div id="version-container">
-      <p id="version">Version 3.1.0 - <a href="https://saterz.github.io/version-picker">View previous versions of this
+      <p id="version">Version 3.1.1 - <a href="https://saterz.github.io/version-picker">View previous versions of this
           website</a></p>
     </div>
     <div id="opensource-container">
       <a href="https://github.com/Saterz/saterz.github.io" target="_blank" id="opensource">Source on GitHub</a>
+    </div>
   </footer>
 
   <!-- Unami Analytics -->

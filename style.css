@@ -6,8 +6,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 /* Font : Tilt Neon */
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-/* Font : Barrio */
-@import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
+/* Font : Teko */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap');
 
 @media (max-width: 402px) {
   #nav-buttons li {
@@ -15,9 +15,14 @@
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 425px) {
   footer {
-    flex-direction: column;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+  }
+  
+  footer div {
+    padding: 10px 0;
   }
 }
 
@@ -68,22 +73,10 @@ body {
 }
 
 /* Styling for the title container */
-.box-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 15px;
-  backdrop-filter: blur(15px);
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 15px;
-  color: black;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect for the title container */
-.box-title:hover {
-  transform: translateY(-10px);
+.card-titles {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 nav {
@@ -93,12 +86,9 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* Space out the three sections */
   align-items: center;
   padding: 20px 30px;
-  background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(14px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   transition: 0.4s ease;
 }
 
@@ -293,7 +283,6 @@ footer {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(14px);
   transition: 0.4s ease;
-  position: fixed;
 }
 
 /* Footer elements alignment */
@@ -324,6 +313,7 @@ footer {
   border: grey 1px;
   border-radius: 10%;
   background-color: grey;
+  transition: 0.3s ease;
 }
 
 /* Spoiler text styles */
