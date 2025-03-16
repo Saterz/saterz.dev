@@ -338,6 +338,10 @@ footer {
   transition: 0.5s;
 }
 
+#banner-content a {
+  text-decoration: underline;
+}
+
 #banner-actions {
   display: flex;
 }

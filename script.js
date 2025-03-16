@@ -74,11 +74,35 @@ menuButton.addEventListener('click', () => {
 
 // Cookies banner
 const btnApprove = document.getElementById('approve');
+const btnDisapprove = document.getElementById('disapprove')
 const banner = document.getElementById('cookie-banner');
 
-btnApprove.addEventListener('click', function(){
+function loadAnalytics() {
+    let script = document.createElement("script");
+    script.defer = true;
+    script.src = "https://cloud.umami.is/script.js";
+    script.setAttribute("data-website-id", "14a3468f-cac2-44a8-996e-c8ed32156037");
+    document.body.appendChild(script);
+}
+
+function hideBanner() {
     banner.style.opacity = 0;
     banner.style.pointerEvents = 'none';
-    menuButton.style.bottom = '4.5rem'
-    menuContainer.style.bottom = '11rem'
+    menuButton.style.bottom = '4.5rem';
+    menuContainer.style.bottom = '11rem';
+}
+
+if (localStorage.getItem("cookieConsent") === "true") {
+    loadAnalytics();
+    hideBanner();
+}
+
+btnApprove.addEventListener('click', function(){
+    localStorage.setItem("cookieConsent", "true");
+    loadAnalytics();
+    hideBanner();
+});
+
+btnDisapprove.addEventListener('click', function(){
+    hideBanner();
 });
