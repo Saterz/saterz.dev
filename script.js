@@ -71,3 +71,14 @@ menuButton.addEventListener('click', () => {
     
     menuIcon.classList.toggle('fa-xmark');
 });
+
+// Cookies banner
+const btnApprove = document.getElementById('approve');
+const banner = document.getElementById('cookie-banner');
+
+btnApprove.addEventListener('click', function(){
+    banner.style.opacity = 0;
+    banner.style.pointerEvents = 'none';
+    menuButton.style.bottom = '4.5rem'
+    menuContainer.style.bottom = '11rem'
+});
