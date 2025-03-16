@@ -67,6 +67,39 @@ nav {
   transition: 0.4s ease;
 }
 
+.titles {
+  font-family: 'Young Serif', serif;
+  font-size: 3.2rem;
+  margin-bottom: 2.4rem;
+}
+
+#version-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 4rem 2rem;
+  text-align: center;
+}
+
+.version-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1.5rem 2.5rem rgba(129, 124, 124, 0.2);
+  border-radius: 1.5rem;
+  padding: 2.4rem;
+  max-width: 35rem;
+  flex: 1 1 30rem;
+  transition: 0.3s ease;
+}
+
+.version-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
+}
+
 /* Footer styles */
 footer {
   font-size: 1.6rem;
