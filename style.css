@@ -16,13 +16,22 @@
 }
 
 @media (max-width: 425px) {
+  /* Footer responsiveness*/
   footer {
-    align-items: flex-start;
     flex-direction: column-reverse;
   }
   
   footer div {
     padding: 1rem 0;
+  }
+
+  /* Banner responsiveness*/
+  #cookie-banner {
+    flex-direction: column;
+  }
+
+  #banner-content {
+    padding-bottom: 2rem;
   }
 }
 
@@ -158,7 +167,7 @@ nav li a:hover {
 }
 
 /* Project cards container */
-#projects-container {
+#projects-container, #ideas-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -170,7 +179,7 @@ nav li a:hover {
 }
 
 /* Frosted-glass effect for each content box */
-.about-card {
+.about-card, .ideas-card {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(14px);
   box-shadow: 0 1.5rem 2.5rem rgba(129, 124, 124, 0.2);
@@ -182,7 +191,7 @@ nav li a:hover {
 }
 
 /* Smooth hover animation */
-.about-card:hover {
+.about-card:hover, .ideas-card:hover {
   transform: translateY(-0.5rem);
   box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
 }
