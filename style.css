@@ -9,44 +9,6 @@
 /* Font : Crimson Text */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap');
 
-@media (max-width: 402px) {
-  #nav-buttons li {
-    padding: 2rem 0;
-  }
-}
-
-@media (max-width: 425px) {
-  /* Footer responsiveness*/
-  footer {
-    flex-direction: column-reverse;
-  }
-  
-  footer div {
-    padding: 1rem 0;
-  }
-
-  /* Banner responsiveness*/
-  #cookie-banner {
-    flex-direction: column;
-  }
-
-  #banner-content {
-    padding-bottom: 2rem;
-  }
-}
-
-@media (max-width: 850px) {
-  #social i {
-    padding: 2.5rem;
-  }
-}
-
-@media (max-width: 912px) {
-  #main-title-container {
-    margin-bottom: 2rem;
-  }
-}
-
 /* Universal reset for consistent styling */
 * {
   margin: 0;
@@ -125,6 +87,51 @@ nav li a {
 
 nav li a:hover {
   border-radius: 1.5rem;
+}
+
+#main-title-container {
+  order: 1;
+  margin-right: auto;
+  text-align: left;
+}
+
+#nav-buttons,
+#menu-button {
+  order: 2;
+  text-align: left;
+  margin-left: auto;
+}
+
+#menu-button {
+  width: 4.9rem;
+  height: 4.9rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+#menu-button i {
+  text-align: center;
+  transition: 1s ease;
+}
+
+.menu-container {
+  opacity: 0;
+  pointer-events: none;
+  padding: 2rem;
+  position: absolute;
+  border-radius: 1.5rem;
+  top: 10rem;
+  right: 1rem;
+  z-index: 5;
+  background-color: rgba(153, 153, 153, 0.5);
+  backdrop-filter: blur(14px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
 }
 
 #content {
@@ -223,7 +230,6 @@ nav li a:hover {
 #social {
   padding: 3rem 0;
   text-align: center;
-  padding-bottom: 7.5rem;
 }
 
 /* Hero section styles */
@@ -245,6 +251,7 @@ footer {
   bottom: 0;
   display: flex;
   transition: 0.4s ease;
+  backdrop-filter: blur(14px);
 }
 
 /* Footer elements alignment */
@@ -260,11 +267,15 @@ footer {
   text-align: center;
 }
 
+#version-container a {
+  text-decoration: underline;
+}
+
 #opensource-container {
   order: 3;
   flex: 1;
   text-align: right;
-  text-decoration: line;
+  text-decoration: underline;
 }
 
 /* Social media links hover effect */
@@ -292,83 +303,63 @@ footer {
   background-color: rgba(255, 255, 255, 0);
 }
 
-#menu-button {
-  width: 4.9rem;
-  height: 4.9rem;
-  cursor: pointer;
-  position: fixed;
-  padding: 1rem;
-  background-color: rgba(153, 153, 153, 0.5);
-  border-radius: 50%;
-  bottom: 10rem;
-  right: 1rem;
-  z-index: 5;
-  backdrop-filter: blur(14px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s ease;
-}
-
-#menu-button i {
-  text-align: center;
-  transition: 0.3s ease;
-}
-
-.menu-container {
+#floating-ring {
   opacity: 0;
-  pointer-events: none;
   padding: 2rem;
+  border: 2px solid black;
+  border-radius: 50%;
   position: fixed;
-  border-radius: 1.5rem;
-  bottom: 16rem;
-  right: 1rem;
-  z-index: 5;
-  background-color: rgba(153, 153, 153, 0.5);
-  backdrop-filter: blur(14px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+  box-sizing: border-box;
 }
 
-#cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(14px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3rem;
-  opacity: 1;
-  transition: 0.5s;
-}
-
-#banner-content a {
-  text-decoration: underline;
-}
-
-#banner-actions {
-  display: flex;
-}
-
-.btn {
-  color: white;
-  background-color: rgba(200, 200, 200, 0.2);
+#floating-ball {
+  opacity: 0;
   padding: 1rem;
-  margin: 0 1rem;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+  background-color: black;
+  position: fixed;
+  z-index: -1; /* Changed from -1 so it overlays text */
+  border-radius: 50%;
 }
 
-#approve {
-  background-color: rgba(0, 0, 0, 0.5);
+@media (max-width: 402px) {
+  #nav-buttons li {
+    padding: 2rem 0;
+  }
 }
 
-#disapprove {
-  color: black;
+@media (max-width: 425px) {
+  /* Footer responsiveness*/
+  footer {
+    flex-direction: column-reverse;
+  }
+  
+  footer div {
+    padding: 1rem 0;
+    text-align: left;
+  }
+
+  /* Social media icons responsiveness */
+  #social {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  #floating-ring, #floating-ball {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  #social i {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 912px) {
+  #main-title-container {
+    margin-bottom: 2rem;
+  }
 }
