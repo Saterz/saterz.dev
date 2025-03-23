@@ -105,6 +105,7 @@ document.addEventListener('mousemove', (event) => {
 
 document.addEventListener('click', function(){
     floatingBall.style.padding = '2rem'
+    setTimeout(floatingBall.style.padding = '1rem', 5000);
 });
 
 // Animate the elements toward their target positions using easing
