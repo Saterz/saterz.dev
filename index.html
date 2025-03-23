@@ -18,31 +18,31 @@
 
 <body>
 
-  <div id="floating-ring">
-    <div id="floating-ball"></div>
-  </div>
+  <div class="floating ring"></div>
+  <div class="floating ball"></div>
 
   <nav>
-    <div id="main-title-container">
+    <div class="order-1 mr-auto">
       <h1 id="main_title">Saterz's Website</h1>
     </div>
 
-    <div id="nav-buttons">
+    <div class="button nav">
       <ul>
         <li><a href="#about">À propos</a></li>
         <li><a href="#portfolio">Projets</a></li>
         <li><a href="#social">Réseaux</a></li>
       </ul>
     </div>
-    <div id="menu-button">
+    <div class="button menu">
       <i class="fa-solid fa-bars fa-2x"></i>
+    </div>
+    <div class="menu-container">
+      <a href="https://saterz.github.io/en">Switch to English</a>
     </div>
   </nav>
 
-  <hr />
-
   <!-- Hero section introducing the website -->
-  <section id="hero">
+  <section class="section">
     <h2 class="titles">Bienvenue sur le meilleur site web d'internet</h2>
     <p>On est censé mettre quoi ici ?</p>
   </section>
@@ -51,22 +51,22 @@
   <section id="about">
     <h2 class="titles">À propos de moi</h2>
     <div id="about-container">
-      <div class="about-card">
-        <h3 class="card-titles">Identité</h3>
-        <p class="card-content">Je m'appelle Ilan, j'ai 15 ans et je suis actuellement en classe de Seconde.</p>
+      <div class="card text">
+        <h3 class="title">Identité</h3>
+        <p class="content">Je m'appelle Ilan, j'ai 15 ans et je suis actuellement en classe de Seconde.</p>
       </div>
-      <div class="about-card">
-        <h3 class="card-titles">Origine & Langues</h3>
-        <p class="card-content">Je viens des Antilles françaises et je parle français, anglais ainsi qu'un peu de créole
-          <span class="spoiler">(counia manmanw)</span>.</p>
+      <div class="card text">
+        <h3 class="title">Origine & Langues</h3>
+        <p class="content">Je viens des Antilles françaises et je parle français, anglais ainsi qu'un peu de créole
+          <span class="content spoiler">(counia manmanw)</span>.</p>
       </div>
-      <div class="about-card">
-        <h3 class="card-titles">Centres d'intérêt</h3>
-        <p class="card-content">J'adore l'informatique, la musique, la lecture et bien sûr, les jeux vidéo.</p>
+      <div class="card text">
+        <h3 class="title">Centres d'intérêt</h3>
+        <p class="content">J'adore l'informatique, la musique, la lecture et bien sûr, les jeux vidéo.</p>
       </div>
-      <div class="about-card">
-        <h3 class="card-titles">Fun Fact</h3>
-        <p class="card-content">J'ai entamé la création de ce site en 2023, mais j'ai tellement procrastiné que je ne
+      <div class="card text">
+        <h3 class="title">Fun Fact</h3>
+        <p class="content">J'ai entamé la création de ce site en 2023, mais j'ai tellement procrastiné que je ne
           l'ai finalement
           achevé
           qu'en 2025…</p>
@@ -75,55 +75,55 @@
   </section>
 
   <!-- Portfolio section showcasing projects -->
-  <section id="portfolio">
+  <section class="section">
     <h2 class="titles">Mes projets :</h2>
-    <div id="projects-container">
+    <div class="container">
 
       <!-- Deep Dive Project Card -->
-      <div class="projects-card">
+      <div class="card image">
         <a href="https://www.planet-casio.com/Fr/programmes/programme4347-1-deep-dive-validuser-jeux-actionsport.html">
           <img src="pictures/Deep Dive.gif" alt="Deep Dive Game Art" width="75%">
-          <h3 class="card-titles">Deep Dive</h3>
-          <p class="card-content">Un jeu sur calculatrice Casio créé lors d'un game jam organisé par Planet Casio, le
+          <h3 class="title">Deep Dive</h3>
+          <p class="content">Un jeu sur calculatrice Casio créé lors d'un game jam organisé par Planet Casio, le
             CPC#30.</p>
         </a>
       </div>
 
       <!-- Proies Project Card -->
-      <div class="projects-card">
+      <div class="card image">
         <a href="https://www.planet-casio.com/Fr/programmes/programme4342-1-proies-validuser-jeux-directiontir.html">
           <img src="pictures/Proies.gif" alt="Proies Game Art" width="75%">
-          <h3 class="card-titles">Proies</h3>
-          <p class="card-content">Un jeu sur calculatrice Casio créé lors d'un game jam organisé par Planet Casio, le
+          <h3 class="title">Proies</h3>
+          <p class="content">Un jeu sur calculatrice Casio créé lors d'un game jam organisé par Planet Casio, le
             Chill Casio Game
             Jam.</p>
         </a>
       </div>
 
       <!-- Fall Up Project Card -->
-      <div class="projects-card">
+      <div class="card image">
         <a href="https://www.planet-casio.com/Fr/programmes/programme4362-1-fall-up-validuser-jeux-actionsport.html">
           <img src="pictures/Fall_Up.gif" alt="Fall Up Game Art" width="75%">
-          <h3 class="card-titles">Fall Up</h3>
-          <p class="card-content">Un jeu sur calculatrice Casio créé pour Planet Casio.</p>
+          <h3 class="title">Fall Up</h3>
+          <p class="content">Un jeu sur calculatrice Casio créé pour Planet Casio.</p>
         </a>
       </div>
 
       <!-- Saterz's Website Card -->
-      <div class="projects-card">
+      <div class="card image">
         <a href="https://saterz.github.io/">
           <img src="pictures/Saterz's website.webp" alt="Screenshot Saterz's Website" width="75%">
-          <h3 class="card-titles">Saterz's Website</h3>
-          <p class="card-content">Oui, ce site web a été codé de A à Z par moi</p>
+          <h3 class="title">Saterz's Website</h3>
+          <p class="content">Oui, ce site web a été codé de A à Z par moi</p>
         </a>
       </div>
 
       <!-- ActusJeuxSNT Card -->
-      <div class="projects-card">
+      <div class="card image">
         <a href="https://saterz.github.io/ActusJeuxSNT">
           <img src="pictures/ActusJeux.webp" alt="Screenshot ActusJeuxSNT" width="75%">
-          <h3 class="card-titles">ActusJeuxSNT</h3>
-          <p class="card-content">Un site web développé dans le cadre d'un projet évalué en classe de Sciences
+          <h3 class="title">ActusJeuxSNT</h3>
+          <p class="content">Un site web développé dans le cadre d'un projet évalué en classe de Sciences
             Numériques et Technologie
             (SNT).</p>
         </a>
@@ -131,22 +131,30 @@
     </div> <!-- End of projects-cards -->
   </section>
 
-  <section id="ideas">
+  <section class="section">
     <h2 class="titles">Projets future :</h2>
-    <div id="ideas-container">
+    <div class="container">
       <!-- Samsung Music, but better Card -->
-      <div class="ideas-card">
+      <div class="card text">
         <a href="https://github.com/Saterz/Samsung-Music-but-better">
           <!-- <img src="pictures/placeholder.webp" alt="Placeholder" width="75%"> -->
-          <h3 class="card-titles">Samsung Music, but better</h3>
-          <p class="card-content">Une version améliorer de Samsung Music avec plus de fonctionalités, une meilleur IU, etc... (Nom à venir)</p>
+          <h3 class="title">Samsung Music, but better</h3>
+          <p class="content">Une version améliorer de Samsung Music avec plus de fonctionalités, une meilleur IU, etc... (Nom à venir)</p>
         </a>
       </div>
-    </div> <!-- End of projects-cards -->
+
+      <!-- Updates Relay -->
+       <div class="card text">
+        <a href="https://www.discord.gg/invites/udcqxNvCB8">
+          <h3 class="title">Updates Relay</h3>
+          <p class="content">Un serveur Discord qui regroupe les annonces provenant de divers serveurs populaires.</p>
+        </a>
+       </div> <!-- End of ideas-card-->
+    </div> <!-- End of ideas-container -->
   </section>
 
   <!-- Social media section with links to various platforms -->
-  <section id="social">
+  <section class="section social">
     <h2 class="titles">Mes réseaux :</h2>
     <br />
     <!-- Steam -->
@@ -186,12 +194,6 @@
       <img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v14/icons/anilist.svg" />
     </a> -->
   </section>
-
-  <div class="menu-container">
-    <a href="https://saterz.github.io/en">Switch to English</a>
-  </div>
-
-  <hr />
 
   <!-- Footer with copyright and version information -->
   <footer>

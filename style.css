@@ -1,3 +1,5 @@
+/* Style for index.html */
+
 /* Import Google Fonts for custom typography */
 
 /* Font : VT323 */
@@ -35,20 +37,6 @@ body {
   transition: 0.3s ease;
 }
 
-/* Main title styling */
-#main_title {
-  font-family: 'VT323', monospace;
-  color: black;
-  font-size: 8rem;
-}
-
-/* Styling for the title container */
-.card-titles {
-  font-family: "Crimson Text", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
 nav {
   top: 0;
   width: 100%;
@@ -57,13 +45,14 @@ nav {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 0.1rem solid black;
   padding: 2rem 3rem;
   backdrop-filter: blur(14px);
   transition: 0.4s ease;
 }
 
 /* Navigation Buttons Styling */
-#nav-buttons ul {
+.button.nav ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -72,7 +61,7 @@ nav {
   padding: 0;
 }
 
-#nav-buttons li {
+.button.nav li {
   margin: 0 1rem;
 }
 
@@ -86,7 +75,15 @@ nav li a {
 }
 
 nav li a:hover {
-  border-radius: 1.5rem;
+  color: white;
+  background-color: black;
+}
+
+/* Main title styling */
+#main_title {
+  font-family: 'VT323', monospace;
+  color: black;
+  font-size: 8rem;
 }
 
 #main-title-container {
@@ -95,14 +92,13 @@ nav li a:hover {
   text-align: left;
 }
 
-#nav-buttons,
-#menu-button {
+.button {
   order: 2;
   text-align: left;
   margin-left: auto;
 }
 
-#menu-button {
+.button.menu {
   width: 4.9rem;
   height: 4.9rem;
   cursor: pointer;
@@ -110,9 +106,10 @@ nav li a:hover {
   justify-content: center;
   align-items: center;
   transition: 0.3s ease;
+  position: relative;
 }
 
-#menu-button i {
+.button.menu i {
   text-align: center;
   transition: 1s ease;
 }
@@ -122,16 +119,17 @@ nav li a:hover {
   pointer-events: none;
   padding: 2rem;
   position: absolute;
+  border: 0.1rem solid black;
   border-radius: 1.5rem;
-  top: 10rem;
+  top: 75%;
   right: 1rem;
   z-index: 5;
-  background-color: rgba(153, 153, 153, 0.5);
-  backdrop-filter: blur(14px);
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.3s ease;
+  width: max-content;
 }
 
 #content {
@@ -156,25 +154,28 @@ nav li a:hover {
 }
 
 /* Content box titles */
-.card-titles {
+.title {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-style: normal;
   margin-top: 0;
   font-size: 2.4rem;
 }
 
 /* Content box paragraphs */
-.card-content {
+.content {
   font-size: 1.6rem;
   line-height: 1.6;
 }
 
 /* About and portfolio sections */
-#portfolio, #ideas {
+.section {
   padding: 3rem 0;
   text-align: center;
 }
 
 /* Project cards container */
-#projects-container, #ideas-container {
+.container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -185,12 +186,15 @@ nav li a:hover {
   text-align: center;
 }
 
-/* Frosted-glass effect for each content box */
-.about-card, .ideas-card {
-  background: rgba(255, 255, 255, 0.2);
+.card {
+  border-radius: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(14px);
   box-shadow: 0 1.5rem 2.5rem rgba(129, 124, 124, 0.2);
-  border-radius: 1.5rem;
+}
+
+/* Frosted-glass effect for each content box */
+.card.text {
   padding: 2.4rem;
   max-width: 35rem;
   flex: 1 1 30rem;
@@ -198,44 +202,27 @@ nav li a:hover {
 }
 
 /* Smooth hover animation */
-.about-card:hover, .ideas-card:hover {
+.card.text:hover {
   transform: translateY(-0.5rem);
   box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 /* Individual project card styles */
-.projects-card {
+.card.image {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 30rem;
   height: 30rem;
-  box-shadow: 0 1.5rem 2.5rem rgba(129, 124, 124, 0.2);
-  border-radius: 1.5rem;
-  backdrop-filter: blur(14px);
-  background-color: rgba(255, 255, 255, 0.2);
   padding: 1.5rem;
-  color: black;
   transition: 0.3s ease;
 }
 
 /* Hover effect for project cards */
-.projects-card:hover {
+.card.image:hover {
   transform: translateY(-0.5rem);
   box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-/* Social media section styles */
-#social {
-  padding: 3rem 0;
-  text-align: center;
-}
-
-/* Hero section styles */
-#hero {
-  text-align: center;
-  padding: 3rem 0;
 }
 
 /* Titles font family */
@@ -251,6 +238,7 @@ footer {
   bottom: 0;
   display: flex;
   transition: 0.4s ease;
+  border-top: 0.1rem solid black;
   backdrop-filter: blur(14px);
 }
 
@@ -287,44 +275,43 @@ footer {
 .reseaux:hover {
   color: white;
   border-radius: 10%;
-  background-color: grey;
+  background-color: black;
   transition: 0.3s ease;
 }
 
 /* Spoiler text styles */
-.spoiler {
+.content.spoiler {
   color: black;
   background-color: black;
   transition: 0.2s ease;
 }
 
 /* Reveal spoiler text on hover */
-.spoiler:hover {
+.content.spoiler:hover {
   background-color: rgba(255, 255, 255, 0);
 }
 
-#floating-ring {
+.floating {
   opacity: 0;
-  padding: 2rem;
-  border: 2px solid black;
   border-radius: 50%;
   position: fixed;
   z-index: -1;
+}
+
+.floating.ring {
+  padding: 2rem;
+  border: 2px solid black;
   pointer-events: none;
   box-sizing: border-box;
 }
 
-#floating-ball {
-  opacity: 0;
+.floating.ball {
   padding: 1rem;
   background-color: black;
-  position: fixed;
-  z-index: -1; /* Changed from -1 so it overlays text */
-  border-radius: 50%;
 }
 
 @media (max-width: 402px) {
-  #nav-buttons li {
+  .button.nav li {
     padding: 2rem 0;
   }
 }
@@ -341,19 +328,23 @@ footer {
   }
 
   /* Social media icons responsiveness */
-  #social {
+  .section.social {
     flex-direction: column;
+  }
+
+  .button.nav {
+    margin-bottom: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  #floating-ring, #floating-ball {
+  .floating {
     display: none;
   }
 }
 
 @media (max-width: 850px) {
-  #social i {
+  .section.social i {
     padding: 2.5rem;
   }
 }
@@ -362,4 +353,18 @@ footer {
   #main-title-container {
     margin-bottom: 2rem;
   }
+}
+
+/* Additional style for version-picker */
+
+.footer.version {
+  padding: 1rem 2rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-top: 0.1rem solid black;
+  backdrop-filter: blur(14px);
+  transition: 0.4s ease;
 }

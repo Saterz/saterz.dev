@@ -1,4 +1,4 @@
-console.log('connected');
+console.log('Pk t\'es sur la console ?');
 
 // const themeSwitcher = document.querySelector('i');
 
@@ -56,7 +56,7 @@ console.log('connected');
 
 
 // Menu button
-const menuButton = document.getElementById('menu-button');
+const menuButton = document.querySelector('.button.menu');
 const menuIcon = document.querySelector('.fa-bars');
 const menuContainer = document.querySelector('.menu-container');
 
@@ -75,8 +75,8 @@ menuButton.addEventListener('click', () => {
 // Floating ball and ring animation
 
 // Get the DOM elements
-const floatingBall = document.getElementById('floating-ball');
-const floatingRing = document.getElementById('floating-ring');
+const floatingBall = document.querySelector('.floating.ball');
+const floatingRing = document.querySelector('.floating.ring');
 
 // Position variables for the ball
 let targetBallX = 0, targetBallY = 0;
@@ -91,38 +91,42 @@ document.addEventListener('mousemove', (event) => {
     // Show the ball and ring
     floatingBall.style.opacity = "1"
     floatingRing.style.opacity = "1"
-  // Get dimensions of the ball and ring
-  const ballRect = floatingBall.getBoundingClientRect();
-  const ringRect = floatingRing.getBoundingClientRect();
+    // Get dimensions of the ball and ring
+    const ballRect = floatingBall.getBoundingClientRect();
+    const ringRect = floatingRing.getBoundingClientRect();
   
-  // Adjust the target so that the center of the ball and ring follow the cursor
-  targetBallX = event.clientX - ballRect.width / 2;
-  targetBallY = event.clientY - ballRect.height / 2;
+    // Adjust the target so that the center of the ball and ring follow the cursor
+    targetBallX = event.clientX - ballRect.width / 2;
+    targetBallY = event.clientY - ballRect.height / 2;
   
-  targetRingX = event.clientX - ringRect.width / 2;
-  targetRingY = event.clientY - ringRect.height / 2;
+    targetRingX = event.clientX - ringRect.width / 2;
+    targetRingY = event.clientY - ringRect.height / 2;
+});
+
+document.addEventListener('click', function(){
+    floatingBall.style.padding = '2rem'
 });
 
 // Animate the elements toward their target positions using easing
 function animate() {
-  // Easing factors: smaller values result in smoother/slower movement
-  const ballEase = 0.5; // Ball follows faster
-  const ringEase = 0.1; // Ring follows with a slight delay
+    // Easing factors: smaller values result in smoother/slower movement
+    const ballEase = 0.5; // Ball follows faster
+    const ringEase = 0.1; // Ring follows with a slight delay
 
-  // Update the ball's current position
-  currentBallX += (targetBallX - currentBallX) * ballEase;
-  currentBallY += (targetBallY - currentBallY) * ballEase;
-  floatingBall.style.left = currentBallX + "px";
-  floatingBall.style.top = currentBallY + "px";
+    // Update the ball's current position
+    currentBallX += (targetBallX - currentBallX) * ballEase;
+    currentBallY += (targetBallY - currentBallY) * ballEase;
+    floatingBall.style.left = currentBallX + "px";
+    floatingBall.style.top = currentBallY + "px";
   
-  // Update the ring's current position
-  currentRingX += (targetRingX - currentRingX) * ringEase;
-  currentRingY += (targetRingY - currentRingY) * ringEase;
-  floatingRing.style.left = currentRingX + "px";
-  floatingRing.style.top = currentRingY + "px";
+    // Update the ring's current position
+    currentRingX += (targetRingX - currentRingX) * ringEase;
+    currentRingY += (targetRingY - currentRingY) * ringEase;
+    floatingRing.style.left = currentRingX + "px";
+    floatingRing.style.top = currentRingY + "px";
   
-  // Continue the animation loop
-  requestAnimationFrame(animate);
+    // Continue the animation loop
+    requestAnimationFrame(animate);
 }
 
 // Start the animation loop
