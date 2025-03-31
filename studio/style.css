@@ -1,40 +1,52 @@
-/* Style for index.html */
-
 /* Import Google Fonts for custom typography */
 
-/* Font : VT323 */
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+/* Font : Audiowide */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 /* Font : Young Serif */
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 /* Font : Tilt Neon */
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 /* Font : Crimson Text */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap');
+/* Font : Climate Crisis */
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
 
-/* Universal reset for consistent styling */
+:root {
+  --primary-color: #e0d8ce;
+  --background-color: #161511;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--background-color);
+    background-image: url('noise.png');
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+    font-size: 62.5%;
 }
 
 /* Default link styles */
 a {
-  color: black;
   text-decoration: none;
-}
-
-/* Base font and sizing */
-html {
-  font-size: 62.5%;
+  color: var(--primary-color);
 }
 
 /* Global body styles */
 body {
   font-family: 'Tilt Neon', sans-serif;
   font-size: 1.6rem;
+  color: var(--primary-color);
   overflow-x: hidden;
   transition: 0.3s ease;
+}
+
+#hero {
+  transition: 0.5s ease;
 }
 
 nav {
@@ -45,10 +57,28 @@ nav {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 0.1rem solid black;
+  border-bottom: 0.1rem solid var(--primary-color);
   padding: 2rem 3rem;
   backdrop-filter: blur(14px);
-  transition: 0.4s ease;
+  transition: 0.3s ease;
+}
+
+nav.shrinked {
+  position: fixed;
+  z-index: 5;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.1rem solid var(--primary-color);
+  padding: 2rem 3rem;
+  backdrop-filter: blur(14px);
+  transform: translate(15%,10%);
+  width: 75%;
+  border-radius: 50px;
+  transition: 0.3s ease;
 }
 
 /* Navigation Buttons Styling */
@@ -66,81 +96,29 @@ nav {
 }
 
 nav li a {
-  color: black;
+  color: var(--primary-color);
   text-decoration: none;
-  border: solid black;
+  border: solid var(--primary-color);
   border-radius: 1rem;
   padding: 1rem 1.5rem;
   transition: 0.3s ease;
 }
 
 nav li a:hover {
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: var(--primary-color);
 }
 
 /* Main title styling */
 #main_title {
-  font-family: 'VT323', monospace;
+  font-family: "Audiowide", sans-serif;
   font-size: 8rem;
-}
-
-#main-title-container {
-  order: 1;
-  margin-right: auto;
-  text-align: left;
-}
-
-.button {
-  order: 2;
-  text-align: left;
-  margin-left: auto;
-}
-
-.button.menu {
-  width: 4.9rem;
-  height: 4.9rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s ease;
-  position: relative;
-}
-
-.button.menu i {
-  text-align: center;
-  transition: 1s ease;
-}
-
-.menu-container {
-  opacity: 0;
-  pointer-events: none;
-  padding: 2rem;
-  position: absolute;
-  border: 0.1rem solid black;
-  border-radius: 1.5rem;
-  top: 75%;
-  right: 1rem;
-  z-index: 5;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s ease;
-  width: max-content;
 }
 
 #content {
   z-index: 0;
   position: absolute;
   /*margin-top: 50%;*/
-}
-
-/* Overall section styling */
-#about {
-  padding: 3rem 0;
-  text-align: center;
 }
 
 /* Container to layout content boxes responsively */
@@ -168,7 +146,7 @@ nav li a:hover {
 }
 
 /* About and portfolio sections */
-.section {
+section {
   padding: 3rem 0;
   text-align: center;
 }
@@ -187,9 +165,8 @@ nav li a:hover {
 
 .card {
   border-radius: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(14px);
-  box-shadow: 0 1.5rem 2.5rem rgba(129, 124, 124, 0.2);
 }
 
 /* Frosted-glass effect for each content box */
@@ -203,7 +180,7 @@ nav li a:hover {
 /* Smooth hover animation */
 .card.text:hover {
   transform: translateY(-0.5rem);
-  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.8rem 2rem rgba(129, 124, 124, 0.2);
 }
 
 /* Individual project card styles */
@@ -231,14 +208,50 @@ nav li a:hover {
   margin-bottom: 2.4rem;
 }
 
+.profile-pictures {
+  border-radius: 10%;
+  width: 10rem;
+  opacity: 0.5;
+  transition: 0.3s;
+  cursor: pointer;
+  align-items: center;
+}
+
+.profile-pictures:hover {
+  opacity: 1;
+}
+
 /* Footer styles */
 footer {
-  padding: 1rem 2rem;
   bottom: 0;
-  display: flex;
   transition: 0.4s ease;
-  border-top: 0.1rem solid black;
   backdrop-filter: blur(14px);
+  border-top: 0.1rem solid var(--primary-color);
+}
+
+.footer-text {
+  display: flex;
+  margin: 0 20rem;
+  padding: 1rem;
+}
+
+.footer-big-text {
+  font-family: "Climate Crisis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "YEAR" 2000;
+  font-size: 6vw;
+  padding: 0 10rem;
+  text-align: center;
+  height: 20vh;
+  overflow: hidden;
+}
+
+.footer-socials {
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 /* Footer elements alignment */
@@ -248,46 +261,33 @@ footer {
   text-align: left;
 }
 
-#version-container {
+#opensource-container {
   order: 2;
   flex: 1;
-  text-align: center;
-}
-
-#version-container a {
-  text-decoration: underline;
-}
-
-#opensource-container {
-  order: 3;
-  flex: 1;
   text-align: right;
+}
+
+#opensource {
   text-decoration: underline;
+}
+
+#opensource:hover {
+  text-decoration: none;
 }
 
 /* Social media links hover effect */
 .reseaux {
-  color: black;
   padding: 2rem;
 }
 
 .reseaux:hover {
-  color: white;
   border-radius: 10%;
-  background-color: black;
+  background-color: var(--primary-color);
   transition: 0.3s ease;
 }
 
-/* Spoiler text styles */
-.content.spoiler {
+.reseaux:hover i {
   color: black;
-  background-color: black;
-  transition: 0.2s ease;
-}
-
-/* Reveal spoiler text on hover */
-.content.spoiler:hover {
-  background-color: rgba(255, 255, 255, 0);
 }
 
 .floating {
@@ -300,14 +300,14 @@ footer {
 
 .floating.ring {
   padding: 2rem;
-  border: 2px solid black;
+  border: 2px solid var(--primary-color);
   pointer-events: none;
   box-sizing: border-box;
 }
 
 .floating.ball {
   padding: 1rem;
-  background-color: black;
+  background-color: var(--primary-color);
 }
 
 @media (max-width: 402px) {
@@ -317,29 +317,30 @@ footer {
 }
 
 @media (max-width: 425px) {
-  /* Footer responsiveness*/
-  footer {
-    flex-direction: column-reverse;
-  }
-  
-  footer div {
-    padding: 1rem 0;
-    text-align: left;
-  }
-
-  /* Social media icons responsiveness */
-  .section.social {
-    flex-direction: column;
-  }
 
   .button.nav {
     margin-bottom: 2rem;
+  }
+
+  .footer-big-text {
+    display: none;
+  }
+}
+
+@media (max-width: 691px) {
+  .footer-text {
+    margin: 0;
   }
 }
 
 @media (max-width: 768px) {
   .floating {
     display: none;
+  }
+
+  #main_title {
+    font-size: 4rem;
+    padding-bottom: 4%;
   }
 }
 
@@ -353,18 +354,4 @@ footer {
   #main-title-container {
     margin-bottom: 2rem;
   }
-}
-
-/* Additional style for version-picker */
-
-.footer.version {
-  padding: 1rem 2rem;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-top: 0.1rem solid black;
-  backdrop-filter: blur(14px);
-  transition: 0.4s ease;
 }

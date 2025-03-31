@@ -1,4 +1,5 @@
-console.log('Pk t\'es sur la console ?');
+console.log('Pk t\'es dans la console ?');
+console.log('Tqt pas, y\'a pas d\'erreur');
 
 // const themeSwitcher = document.querySelector('i');
 
@@ -96,15 +97,11 @@ document.addEventListener('mousemove', (event) => {
     const ringRect = floatingRing.getBoundingClientRect();
   
     // Adjust the target so that the center of the ball and ring follow the cursor
-    targetBallX = event.clientX - ballRect.width / 2;
-    targetBallY = event.clientY - ballRect.height / 2;
+    targetBallX = event.clientX;
+    targetBallY = event.clientY;
   
-    targetRingX = event.clientX - ringRect.width / 2;
-    targetRingY = event.clientY - ringRect.height / 2;
-});
-
-document.addEventListener('click', function(){
-    floatingBall.style.padding = '2rem'
+    targetRingX = event.clientX;
+    targetRingY = event.clientY;
 });
 
 // Animate the elements toward their target positions using easing
