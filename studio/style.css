@@ -18,17 +18,17 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    background-color: var(--background-color);
-    background-image: url('noise.png');
-    background-repeat: repeat;
-    background-blend-mode: overlay;
-    font-size: 62.5%;
+  background-color: var(--background-color);
+  background-image: url('noise.png');
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+  font-size: 62.5%;
 }
 
 /* Default link styles */
@@ -76,7 +76,7 @@ nav.shrinked {
   border: 0.1rem solid var(--primary-color);
   padding: 2rem 3rem;
   backdrop-filter: blur(14px);
-  transform: translate(15%,10%);
+  transform: translate(15%, 10%);
   width: 75%;
   border-radius: 50px;
   transition: 0.3s ease;
@@ -237,7 +237,8 @@ section {
   font-size: 2rem;
 }
 
-.form-item input, textarea {
+.form-item input,
+textarea {
   padding: 1rem;
   width: 100%;
   color: var(--primary-color);
@@ -245,7 +246,7 @@ section {
   background-color: var(--background-color);
 }
 
-textarea{
+textarea {
   height: 200px;
   font-family: inherit;
   resize: none;

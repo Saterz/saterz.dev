@@ -268,7 +268,8 @@ footer {
   text-decoration: underline;
 }
 
-#opensource:hover, #version a:hover {
+#opensource:hover,
+#version a:hover {
   text-decoration: none;
 }
 
@@ -324,11 +325,12 @@ footer {
 }
 
 @media (max-width: 425px) {
+
   /* Footer responsiveness*/
   footer {
     flex-direction: column-reverse;
   }
-  
+
   footer div {
     padding: 1rem 0;
     text-align: left;

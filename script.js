@@ -10,11 +10,11 @@ menuButton.addEventListener('click', () => {
     if (menuContainer.style.opacity === '1') {
         menuContainer.style.opacity = '0';
         menuContainer.style.pointerEvents = 'none';
-    }else{
+    } else {
         menuContainer.style.opacity = '1';
         menuContainer.style.pointerEvents = 'auto';
     }
-    
+
     menuIcon.classList.toggle('fa-xmark');
 });
 
@@ -40,11 +40,11 @@ document.addEventListener('mousemove', (event) => {
     // Get dimensions of the ball and ring
     const ballRect = floatingBall.getBoundingClientRect();
     const ringRect = floatingRing.getBoundingClientRect();
-  
+
     // Adjust the target so that the center of the ball and ring follow the cursor
     targetBallX = event.clientX;
     targetBallY = event.clientY;
-  
+
     targetRingX = event.clientX;
     targetRingY = event.clientY;
 });
@@ -60,13 +60,13 @@ function animate() {
     currentBallY += (targetBallY - currentBallY) * ballEase;
     floatingBall.style.left = currentBallX + "px";
     floatingBall.style.top = currentBallY + "px";
-  
+
     // Update the ring's current position
     currentRingX += (targetRingX - currentRingX) * ringEase;
     currentRingY += (targetRingY - currentRingY) * ringEase;
     floatingRing.style.left = currentRingX + "px";
     floatingRing.style.top = currentRingY + "px";
-  
+
     // Continue the animation loop
     requestAnimationFrame(animate);
 }

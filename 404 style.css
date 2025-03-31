@@ -1,6 +1,20 @@
+/* Import Google Fonts for custom typography */
+
+/* Font : VT323 */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+/* Font : Young Serif */
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+/* Font : Tilt Neon */
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+/* Font : Crimson Text */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap');
+/* Font : Climate Crisis */
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+
+:root {
+  --primary-color: black;
+  --background-color: white;
+}
 
 * {
   margin: 0;
@@ -8,83 +22,146 @@
   box-sizing: border-box;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
-
 html {
-  font-family: 'arial';
-  font-size: 16px;
+  font-size: 62.5%;
 }
 
+/* Default link styles */
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+img {
+  border-radius: 10px;
+  height: auto;
+  width: 80vh;
+  min-width: 40vw;
+}
+
+/* Global body styles */
 body {
   font-family: 'Tilt Neon', sans-serif;
-  margin: 0;
-  padding: 0;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  overflow-x: hidden;
+  transition: 0.3s ease;
 }
 
-#titre_principale {
+nav {
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1rem solid var(--primary-color);
+  padding: 2rem 3rem;
+  backdrop-filter: blur(14px);
+  transition: 0.3s ease;
+}
+
+/* Main title styling */
+#main_title {
   font-family: 'VT323', monospace;
-  color: rgb(0, 255, 255);
-  margin: 20px;
+  font-size: 8rem;
+}
+
+#content {
+  z-index: 0;
+  position: absolute;
+  /*margin-top: 50%;*/
+}
+
+/* Content box titles */
+.title {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 0;
+  font-size: 2.4rem;
+}
+
+/* Content box paragraphs */
+.content {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+/* About and portfolio sections */
+section {
+  padding: 3rem 0;
   text-align: center;
 }
 
-header {
-  background-color: #000000;
-  color: #fff;
-  padding: 10px 0;
-}
-
-.hero {
-  background-color: #f4f4f4;
+/* Project cards container */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 4rem 2rem;
   text-align: center;
-  padding: 50px 0;
 }
 
-.hero a {
-  color: white;
+.container.content {
+  flex-direction: column;
+}
+
+.container a {
+  padding: 3rem;
+  border: solid 0.1rem black;
+  border-radius: 25px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.container a:hover {
   background-color: black;
-  border: 1px solid black;
-  border-radius: 25px;
-  padding: 20px;
-  transition: 0.5s;
+  color: white;
+  transition: 0.3s ease;
 }
 
-.hero a:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  border-radius: 25px;
-}
-
-.titres {
+/* Titles font family */
+.titles {
   font-family: 'Young Serif', serif;
+  font-size: 3.2rem;
+  margin-bottom: 2.4rem;
+  margin: 0 1rem;
 }
 
+/* Footer styles */
 footer {
-  background-color: #000000;
-  padding: 10px;
+  padding: 1rem 2rem;
   position: fixed;
   width: 100%;
   bottom: 0;
   display: flex;
+  transition: 0.4s ease;
+  border-top: 0.1rem solid black;
+  backdrop-filter: blur(14px);
 }
 
-#copyright {
-  color: #fff;
-  padding-left: 10px;
+/* Footer elements alignment */
+#copyright-container {
+  order: 1;
+  flex: 1;
   text-align: left;
 }
 
-#opensource {
-  color: white;
+#opensource-container {
+  order: 2;
+  flex: 1;
   text-align: right;
-  text-decoration: none;
-  position: absolute;
-  right: 10px;
+}
+
+#opensource {
+  text-decoration: underline;
 }
 
 #opensource:hover {
-  color: aqua;
+  text-decoration: none;
 }
