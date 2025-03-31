@@ -207,6 +207,7 @@ section {
   font-family: 'Young Serif', serif;
   font-size: 3.2rem;
   margin-bottom: 2.4rem;
+  margin: 0 1rem;
 }
 
 .profile-pictures {
@@ -308,6 +309,7 @@ footer {
   text-align: center;
   height: 20vh;
   overflow: hidden;
+  position: relative;
 }
 
 .footer-socials {
@@ -371,20 +373,10 @@ footer {
   background-color: var(--primary-color);
 }
 
-@media (max-width: 402px) {
-  .button.nav li {
-    padding: 2rem 0;
-  }
-}
-
 @media (max-width: 425px) {
 
   .button.nav {
     margin-bottom: 2rem;
-  }
-
-  .footer-big-text {
-    display: none;
   }
 }
 
@@ -401,7 +393,6 @@ footer {
 
   #main_title {
     font-size: 4rem;
-    padding-bottom: 4%;
   }
 }
 
@@ -411,8 +402,20 @@ footer {
   }
 }
 
+@media (max-width: 971px) {
+  .footer-big-text {
+    display: none;
+  }
+}
+
 @media (max-width: 912px) {
   #main-title-container {
     margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 1227px) {
+  .button.nav li {
+    padding: 2rem 0;
   }
 }

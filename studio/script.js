@@ -57,25 +57,44 @@ function animate() {
 // Start the animation loop
 animate();
 
-// Nav shrink when scrolling
-
 const nav = document.querySelector('nav');
 const hero = document.getElementById('hero');
+let scrollListenerAdded = false;
 
-if (window.matchMedia("(min-width: 375px)").matches) {
-    window.addEventListener('scroll', function(){
-        let height = document.documentElement.scrollTop;
-        if (height > 42) {
-            if (!nav.classList.contains('shrinked')) {
-              hero.style.marginTop = '30vh';
-              nav.classList.add('shrinked');
-            };
-        } else {
-            hero.style.marginTop = '0vh';
-            nav.classList.remove('shrinked');
-        };
-    });
-};
+function handleScreenWidth() {
+  // Check if the screen width is at least 375px
+  if (window.matchMedia("(min-width: 1012px)").matches) {
+    if (!scrollListenerAdded) {
+      window.addEventListener('scroll', onScroll);
+      scrollListenerAdded = true;
+    }
+  } else {
+    if (scrollListenerAdded) {
+      window.removeEventListener('scroll', onScroll);
+      scrollListenerAdded = false;
+    }
+  }
+}
+
+function onScroll() {
+  let height = document.documentElement.scrollTop;
+  if (height > 42) {
+    if (!nav.classList.contains('shrinked')) {
+      hero.style.marginTop = '30vh';
+      nav.classList.add('shrinked');
+    }
+  } else {
+    hero.style.marginTop = '0vh';
+    nav.classList.remove('shrinked');
+  }
+}
+
+// Run the function when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", handleScreenWidth);
+
+// Listen for window resize to adjust the scroll listener accordingly
+window.addEventListener("resize", handleScreenWidth);
+
 
 // Form conformity check + sending it to Google Sheets
 
