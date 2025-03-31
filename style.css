@@ -262,7 +262,14 @@ footer {
   order: 3;
   flex: 1;
   text-align: right;
+}
+
+#opensource {
   text-decoration: underline;
+}
+
+#opensource:hover, #version a:hover {
+  text-decoration: none;
 }
 
 /* Social media links hover effect */
