@@ -83,6 +83,39 @@
           </div>
         </div>
       </section>
+
+      <section>
+        <h2 class="titles">Contact us:</h2>
+        <p>You want to join the team or have a suggestion ?<br>
+        Send a us a message below !</p>
+        <div class="container">
+          <div class="card text form">
+            <form>
+              <div class="form-item">
+                <label for="name" class="title">Name</label>
+                <input type="text" id="name" placeholder="Jack">
+                <p class="error name less">Name must be more than 2 characters.</p>
+                <p class="error name more">Name must be less than 12 characters.</p>
+                <p class="error name char">Name must only contain letters and spaces.</p>
+              </div>
+              <div class="form-item">
+                <label for="email" class="title">Email</label>
+                <input type="text" id="email" placeholder="jack@example.com">
+                <p class="error email nothing">Email address is required.</p>
+                <p class="error email char">Please enter a valid email address.</p>
+              </div>
+              <div class="form-item">
+                <label for="message" class="title">Message</label>
+                <input type="text" id="message" placeholder="Your website is trash">
+                <p class="error message nothing">Message is required.</p>
+                <p class="error message more">Message must be less than 500 characters.</p>
+              </div>
+              <button id="btn-form" type="submit">Submit</button>
+              <p class="success">Message sent successfully !</p>
+            </form>
+          </div>
+        </div>
+      </section>
       
       <!-- Footer with copyright and version information -->
       <footer>
@@ -107,7 +140,7 @@
       </div>
       
       <div class="footer-big-text">
-        <h1>STUDIO</h1>
+        <p>THE END</p>
       </div>
     </footer>
       

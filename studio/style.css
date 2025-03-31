@@ -14,6 +14,7 @@
 :root {
   --primary-color: #e0d8ce;
   --background-color: #161511;
+  --error-messages: #FF5252;
 }
 
 * {
@@ -221,6 +222,60 @@ section {
   opacity: 1;
 }
 
+.card.text.form:hover {
+  transform: translateY(0rem);
+}
+
+.form-item {
+  margin-bottom: 3rem;
+}
+
+.form-item label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.form-item input, textarea {
+  padding: 1rem;
+  width: 100%;
+  color: var(--primary-color);
+  font-size: 2rem;
+  background-color: var(--background-color);
+}
+
+textarea{
+  height: 200px;
+  font-family: inherit;
+  resize: none;
+}
+
+#btn-form {
+  background-color: var(--primary-color);
+  color: #1E2337;
+  border: none;
+  padding: 2rem;
+  width: 50%;
+  border-radius: 10px;
+  margin-top: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.error {
+  color: var(--error-messages);
+  text-align: left;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.success {
+  color: var(--primary-color);
+  margin-top: 0.5rem;
+  display: none;
+}
+
 /* Footer styles */
 footer {
   bottom: 0;
@@ -242,7 +297,7 @@ footer {
   font-style: normal;
   font-variation-settings:
     "YEAR" 2000;
-  font-size: 6vw;
+  font-size: 13vw;
   padding: 0 10rem;
   text-align: center;
   height: 20vh;
