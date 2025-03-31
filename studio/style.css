@@ -261,6 +261,12 @@ textarea{
   font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
+  transition: 0.5s ease;
+}
+
+#btn-form:hover {
+  border-radius: 50px;
+  transition: 0.5s ease;
 }
 
 .error {

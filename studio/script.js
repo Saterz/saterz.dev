@@ -77,12 +77,35 @@ if (window.matchMedia("(min-width: 375px)").matches) {
     });
 };
 
-// Form conformity check
+// Form conformity check + sending it to Google Sheets
 
 const form = document.querySelector('form');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
 const message = document.getElementById('message');
+
+function storeForm(nameValue, emailValue, messageValue){
+    fetch('https://sheetdb.io/api/v1/slqmz79npyucr', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer g7a24kuh6s0jr777ojmiqmw3c02hib0gkzm59de9'
+        },
+        body: JSON.stringify({
+            data: [
+                {
+                    'id': "INCREMENT",
+                    'Name': nameValue,
+                    'Email': emailValue,
+                    'Message': messageValue
+                }
+            ]
+        })
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));    
+};
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -103,38 +126,43 @@ form.addEventListener('submit', function(e) {
     }
 
     if (nameValue === ""){
-        document.querySelector('.error.name').style.display = 'none'
-        nameSuccess = true
+        document.querySelector('.error.name').style.display = 'none';
+        nameSuccess = true;
     } else if (nameValue.length < 2){
-        document.querySelector('.error.name.less').style.display = 'block'
+        document.querySelector('.error.name.less').style.display = 'block';
     } else if (nameValue.length > 12){
-        document.querySelector('.error.name.more').style.display = 'block'
+        document.querySelector('.error.name.more').style.display = 'block';
     } else if (!checkName(nameValue)){
-        document.querySelector('.error.name.char').style.display = 'block'
+        document.querySelector('.error.name.char').style.display = 'block';
     } else {
-        document.querySelector('.error.name').style.display = 'none'
-        nameSuccess = true
-    }
+        document.querySelector('.error.name').style.display = 'none';
+        nameSuccess = true;
+    };
 
     if (emailValue === ""){
-        document.querySelector('.error.email.nothing').style.display = 'block'
+        document.querySelector('.error.email.nothing').style.display = 'block';
     } else if (!checkEmail(emailValue)){
-        document.querySelector('.error.email.char').style.display = 'block'
+        document.querySelector('.error.email.char').style.display = 'block';
     } else {
-        document.querySelector('.error.email').style.display = 'none'
-        emailSuccess = true
-    }
+        document.querySelector('.error.email').style.display = 'none';
+        emailSuccess = true;
+    };
 
     if (messageValue === ""){
-        document.querySelector('.error.message.nothing').style.display = 'block'
+        document.querySelector('.error.message.nothing').style.display = 'block';
     } else if (messageValue.length > 500){
-        document.querySelector('.error.message.more').style.display = 'block'
+        document.querySelector('.error.message.more').style.display = 'block';
     } else {
-        document.querySelector('.error.message').style.display = 'none'
-        messageSuccess = true
+        document.querySelector('.error.message').style.display = 'none';
+        messageSuccess = true;
     }
 
     if (nameSuccess === true && emailSuccess === true && messageSuccess === true){
-        document.querySelector('.success').style.display = 'block'
-    }
+        document.querySelector('.success').style.display = 'block';
+        setTimeout(function() {
+            document.querySelector('.success').style.display = 'none';
+        }, 5000);
+        nameSuccess = emailSuccess = messageSuccess = false;
+        storeForm(nameValue, emailValue, messageValue);
+    };
 });
