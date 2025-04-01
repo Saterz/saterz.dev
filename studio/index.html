@@ -104,18 +104,19 @@
             <p class="error name char">Name must only contain letters and spaces.</p>
           </div>
           <div class="form-item">
-            <label for="email" class="title">Email</label>
+            <label for="email" class="title">Email*</label>
             <input type="text" id="email" placeholder="markthehater@example.com">
             <p class="error email nothing">Email address is required.</p>
             <p class="error email char">Please enter a valid email address.</p>
           </div>
           <div class="form-item">
-            <label for="message" class="title">Message</label>
+            <label for="message" class="title">Message*</label>
             <input type="text" id="message" placeholder="Your website is trash">
             <p class="error message nothing">Message is required.</p>
             <p class="error message more">Message must be less than 500 characters.</p>
           </div>
-          <button id="btn-form" type="submit">Submit</button>
+          <p id="requirement">*required</p>
+          <button id="btn-form" type="submit" data-umami-event="Form submit button">Submit</button>
           <p class="success">Message sent successfully !</p>
         </form>
       </div>
@@ -129,7 +130,7 @@
         <p id="copyright">&copy; 2023-2025 Saterz</p>
       </div>
       <div id="opensource-container">
-        <a href="https://github.com/Saterz/saterz.github.io" target="_blank" id="opensource">Source on GitHub</a>
+        <a href="https://github.com/Saterz/saterz.github.io" target="_blank" id="opensource" data-umami-event="Opensource link">Source on GitHub</a>
       </div>
     </div>
 

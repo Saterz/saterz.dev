@@ -1,15 +1,61 @@
 // Easter Egg
 
 const img404 = document.querySelector('img');
-let counter = 0
+let clickStartTime = 0;
 
-img404.addEventListener('click', function () {
-    counter++
-    img404.style.transform = `rotate(${counter}deg)`;
-    // if (counter >= 100) {
-    //     img404.style.animation = ''
-    // }
+img404.addEventListener('mousedown', () => {
+  clickStartTime = Date.now();
 });
+
+img404.addEventListener('mouseup', () => {
+  const duration = Date.now() - clickStartTime;
+  const animDuration = Math.min(Math.max(duration, 400), 3000); // Wobble duration based on click hold
+  
+  // Trigger the wobbly animation with the dynamic duration
+  img404.style.animation = `professionalAnim ${animDuration}ms ease-in-out`;
+  
+  // Trigger the confetti animation with a fixed duration
+  launchConfetti();
+
+  img404.addEventListener('animationend', () => {
+    img404.style.animation = '';
+  }, { once: true });
+});
+
+// Confetti function: creates many small div elements that fall down
+function launchConfetti() {
+  const confettiContainer = document.createElement('div');
+  confettiContainer.className = 'confetti-container';
+  document.body.appendChild(confettiContainer);
+
+  const numConfetti = 100; // You can adjust how many pieces of confetti appear
+
+  for (let i = 0; i < numConfetti; i++) {
+    let confetto = document.createElement('div');
+    confetto.className = 'confetto';
+    // Randomize horizontal starting position, delay, and color
+    confetto.style.left = Math.random() * 100 + '%';
+    confetto.style.animationDelay = Math.random() * 0.5 + 's';
+    confetto.style.backgroundColor = getRandomColor();
+    confettiContainer.appendChild(confetto);
+  }
+
+  // Remove the confetti container after the fixed duration (3 seconds)
+  setTimeout(() => {
+    confettiContainer.remove();
+  }, 3000);
+}
+
+function getRandomColor() {
+    const colors = [
+        '#ff0a54', '#ff477e', '#ff7096', '#ff85a1', 
+        '#fbb1bd', '#f9bec7', '#ff595e', '#ffca3a', 
+        '#8ac926', '#1982c4', '#6a4c93', '#00c49a',
+        '#ff6f61', '#ffa07a', '#dda0dd', '#40e0d0'
+      ];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
 
 // Random text
 

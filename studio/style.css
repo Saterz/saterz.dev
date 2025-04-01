@@ -1,14 +1,8 @@
 /* Import Google Fonts for custom typography */
-
-/* Font : Audiowide */
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-/* Font : Young Serif */
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
-/* Font : Tilt Neon */
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-/* Font : Crimson Text */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap');
-/* Font : Climate Crisis */
 @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
 
 :root {
@@ -46,10 +40,12 @@ body {
   transition: 0.3s ease;
 }
 
+/* Hero section */
 #hero {
   transition: 0.5s ease;
 }
 
+/* Navigation */
 nav {
   top: 0;
   width: 100%;
@@ -64,6 +60,7 @@ nav {
   transition: 0.3s ease;
 }
 
+/* (Optional: This rule may be used by JS on scroll) */
 nav.shrinked {
   position: fixed;
   z-index: 5;
@@ -77,12 +74,11 @@ nav.shrinked {
   padding: 2rem 3rem;
   backdrop-filter: blur(14px);
   transform: translate(15%, 10%);
-  width: 75%;
   border-radius: 50px;
   transition: 0.3s ease;
 }
 
-/* Navigation Buttons Styling */
+/* Navigation Buttons */
 .button.nav ul {
   display: flex;
   flex-direction: row;
@@ -110,19 +106,13 @@ nav li a:hover {
   background-color: var(--primary-color);
 }
 
-/* Main title styling */
+/* Main title */
 #main_title {
   font-family: "Audiowide", sans-serif;
   font-size: 8rem;
 }
 
-#content {
-  z-index: 0;
-  position: absolute;
-  /*margin-top: 50%;*/
-}
-
-/* Container to layout content boxes responsively */
+/* Container for about section */
 #about-container {
   display: flex;
   flex-wrap: wrap;
@@ -146,13 +136,13 @@ nav li a:hover {
   line-height: 1.6;
 }
 
-/* About and portfolio sections */
+/* Section styling */
 section {
   padding: 3rem 0;
   text-align: center;
 }
 
-/* Project cards container */
+/* Container for cards and other content */
 .container {
   display: flex;
   flex-direction: row;
@@ -164,13 +154,14 @@ section {
   text-align: center;
 }
 
+/* Card styling */
 .card {
   border-radius: 1.5rem;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(14px);
 }
 
-/* Frosted-glass effect for each content box */
+/* Text card styling */
 .card.text {
   padding: 2.4rem;
   max-width: 35rem;
@@ -178,38 +169,21 @@ section {
   transition: 0.3s ease;
 }
 
-/* Smooth hover animation */
 .card.text:hover {
   transform: translateY(-0.5rem);
   box-shadow: 0 0.8rem 2rem rgba(129, 124, 124, 0.2);
 }
 
-/* Individual project card styles */
-.card.image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 30rem;
-  height: 30rem;
-  padding: 1.5rem;
-  transition: 0.3s ease;
-}
+/* (Removed .card.image as it is not used in this markup) */
 
-/* Hover effect for project cards */
-.card.image:hover {
-  transform: translateY(-0.5rem);
-  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-/* Titles font family */
+/* Titles for sections */
 .titles {
   font-family: 'Young Serif', serif;
   font-size: 3.2rem;
-  margin-bottom: 2.4rem;
-  margin: 0 1rem;
+  margin: 0 1rem 2.4rem;
 }
 
+/* Profile picture styling */
 .profile-pictures {
   border-radius: 10%;
   width: 10rem;
@@ -223,10 +197,12 @@ section {
   opacity: 1;
 }
 
+/* Form card hover (for contact section) */
 .card.text.form:hover {
-  transform: translateY(0rem);
+  transform: translateY(0);
 }
 
+/* Form elements */
 .form-item {
   margin-bottom: 3rem;
 }
@@ -284,7 +260,7 @@ textarea {
   display: none;
 }
 
-/* Footer styles */
+/* Footer styling */
 footer {
   bottom: 0;
   transition: 0.4s ease;
@@ -303,8 +279,7 @@ footer {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "YEAR" 2000;
+  font-variation-settings: "YEAR" 2000;
   font-size: 13vw;
   padding: 0 10rem;
   text-align: center;
@@ -339,7 +314,7 @@ footer {
   text-decoration: none;
 }
 
-/* Social media links hover effect */
+/* Social media links */
 .reseaux {
   padding: 2rem;
 }
@@ -354,6 +329,7 @@ footer {
   color: black;
 }
 
+/* Floating elements */
 .floating {
   opacity: 0;
   transform: translate(-50%, -50%);
@@ -374,8 +350,8 @@ footer {
   background-color: var(--primary-color);
 }
 
+/* Media Queries */
 @media (max-width: 425px) {
-
   .button.nav {
     margin-bottom: 2rem;
   }
@@ -391,27 +367,16 @@ footer {
   .floating {
     display: none;
   }
-
   #main_title {
     font-size: 4rem;
   }
 }
 
-@media (max-width: 850px) {
-  .section.social i {
-    padding: 2.5rem;
-  }
-}
+/* Removed media query for .section.social since no such class exists in this markup */
 
 @media (max-width: 971px) {
   .footer-big-text {
     display: none;
-  }
-}
-
-@media (max-width: 912px) {
-  #main-title-container {
-    margin-bottom: 2rem;
   }
 }
 

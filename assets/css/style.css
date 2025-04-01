@@ -1,14 +1,7 @@
-/* Style for index.html */
-
 /* Import Google Fonts for custom typography */
-
-/* Font : VT323 */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-/* Font : Young Serif */
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
-/* Font : Tilt Neon */
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-/* Font : Crimson Text */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap');
 
 /* Universal reset for consistent styling */
@@ -37,11 +30,11 @@ body {
   transition: 0.3s ease;
 }
 
+/* Navigation */
 nav {
   top: 0;
   width: 100%;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -51,7 +44,7 @@ nav {
   transition: 0.4s ease;
 }
 
-/* Navigation Buttons Styling */
+/* Navigation Buttons */
 .button.nav ul {
   display: flex;
   flex-direction: row;
@@ -79,7 +72,7 @@ nav li a:hover {
   background-color: black;
 }
 
-/* Main title styling */
+/* Main title */
 #main_title {
   font-family: 'VT323', monospace;
   font-size: 8rem;
@@ -91,6 +84,7 @@ nav li a:hover {
   text-align: left;
 }
 
+/* Additional button styles */
 .button {
   order: 2;
   text-align: left;
@@ -113,6 +107,7 @@ nav li a:hover {
   transition: 1s ease;
 }
 
+/* Menu container */
 .menu-container {
   opacity: 0;
   pointer-events: none;
@@ -131,19 +126,12 @@ nav li a:hover {
   width: max-content;
 }
 
-#content {
-  z-index: 0;
-  position: absolute;
-  /*margin-top: 50%;*/
-}
-
-/* Overall section styling */
+/* About section */
 #about {
   padding: 3rem 0;
   text-align: center;
 }
 
-/* Container to layout content boxes responsively */
 #about-container {
   display: flex;
   flex-wrap: wrap;
@@ -152,7 +140,7 @@ nav li a:hover {
   margin: 0 2rem;
 }
 
-/* Content box titles */
+/* Content box titles and paragraphs */
 .title {
   font-family: "Crimson Text", serif;
   font-weight: 700;
@@ -161,22 +149,20 @@ nav li a:hover {
   font-size: 2.4rem;
 }
 
-/* Content box paragraphs */
 .content {
   font-size: 1.6rem;
   line-height: 1.6;
 }
 
-/* About and portfolio sections */
+/* Section styling */
 .section {
   padding: 3rem 0;
   text-align: center;
 }
 
-/* Project cards container */
+/* Container for project cards */
 .container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -185,6 +171,7 @@ nav li a:hover {
   text-align: center;
 }
 
+/* Card styles */
 .card {
   border-radius: 1.5rem;
   background-color: rgba(255, 255, 255, 0.2);
@@ -192,7 +179,7 @@ nav li a:hover {
   box-shadow: 0 1.5rem 2.5rem rgba(129, 124, 124, 0.2);
 }
 
-/* Frosted-glass effect for each content box */
+/* Text cards */
 .card.text {
   padding: 2.4rem;
   max-width: 35rem;
@@ -200,13 +187,12 @@ nav li a:hover {
   transition: 0.3s ease;
 }
 
-/* Smooth hover animation */
 .card.text:hover {
   transform: translateY(-0.5rem);
   box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-/* Individual project card styles */
+/* Image cards */
 .card.image {
   display: flex;
   flex-direction: column;
@@ -218,30 +204,27 @@ nav li a:hover {
   transition: 0.3s ease;
 }
 
-/* Hover effect for project cards */
 .card.image:hover {
   transform: translateY(-0.5rem);
   box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-/* Titles font family */
+/* Titles for sections */
 .titles {
   font-family: 'Young Serif', serif;
   font-size: 3.2rem;
   margin-bottom: 2.4rem;
 }
 
-/* Footer styles */
+/* Footer */
 footer {
   padding: 1rem 2rem;
-  bottom: 0;
   display: flex;
   transition: 0.4s ease;
   border-top: 0.1rem solid black;
   backdrop-filter: blur(14px);
 }
 
-/* Footer elements alignment */
 #copyright-container {
   order: 1;
   flex: 1;
@@ -273,7 +256,7 @@ footer {
   text-decoration: none;
 }
 
-/* Social media links hover effect */
+/* Social media links */
 .reseaux {
   color: black;
   padding: 2rem;
@@ -286,18 +269,18 @@ footer {
   transition: 0.3s ease;
 }
 
-/* Spoiler text styles */
+/* Spoiler text */
 .content.spoiler {
   color: black;
   background-color: black;
   transition: 0.2s ease;
 }
 
-/* Reveal spoiler text on hover */
 .content.spoiler:hover {
   background-color: rgba(255, 255, 255, 0);
 }
 
+/* Floating elements (background effects) */
 .floating {
   opacity: 0;
   transform: translate(-50%, -50%);
@@ -318,6 +301,7 @@ footer {
   background-color: black;
 }
 
+/* Media Queries */
 @media (max-width: 402px) {
   .button.nav li {
     padding: 2rem 0;
@@ -325,22 +309,26 @@ footer {
 }
 
 @media (max-width: 425px) {
-
-  /* Footer responsiveness*/
   footer {
     flex-direction: column-reverse;
   }
-
+  
   footer div {
     padding: 1rem 0;
+  }
+
+  #version-container {
     text-align: left;
   }
 
-  /* Social media icons responsiveness */
+  #opensource-container {
+    text-align: left;
+  }
+  
   .section.social {
     flex-direction: column;
   }
-
+  
   .button.nav {
     margin-bottom: 2rem;
   }
@@ -362,18 +350,4 @@ footer {
   #main-title-container {
     margin-bottom: 2rem;
   }
-}
-
-/* Additional style for version-picker */
-
-.footer.version {
-  padding: 1rem 2rem;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-top: 0.1rem solid black;
-  backdrop-filter: blur(14px);
-  transition: 0.4s ease;
 }
