@@ -77,8 +77,10 @@ nav li a:hover {
 }
 
 /* Additional button styles */
-.button {
+.drop-down-menu {
   order: 2;
+  position: relative;
+  display: inline-block;
   text-align: left;
   margin-left: auto;
 }
@@ -107,20 +109,23 @@ nav li a:hover {
   position: absolute;
   border: 0.1rem solid black;
   border-radius: 1.5rem;
-  top: 75%;
-  right: 1rem;
-  z-index: 5;
+  top: 0;
+  right: 0;
+  z-index: -10;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.3s ease;
   width: max-content;
-  transform: translateY(-50px);
+  transform: scale(0.5);
 }
 
 .menu-container.deploy {
-  transform: translateY(0);
+  pointer-events: auto;
+  opacity: 1;
+  transform: scale(1);
+  overflow: hidden;
 }
 
 /* About section */
@@ -311,6 +316,16 @@ footer {
 }
 
 @media (max-width: 425px) {
+  .section.social {
+    flex-direction: column;
+  }
+  
+  .button.nav {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 617px) {
   footer {
     flex-direction: column-reverse;
   }
@@ -325,14 +340,6 @@ footer {
 
   #opensource-container {
     text-align: left;
-  }
-  
-  .section.social {
-    flex-direction: column;
-  }
-  
-  .button.nav {
-    margin-bottom: 2rem;
   }
 }
 

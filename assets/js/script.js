@@ -11,14 +11,6 @@ const menuIcon = document.querySelector('.fa-bars');
 const menuContainer = document.querySelector('.menu-container');
 
 menuButton.addEventListener('click', () => {
-    if (menuContainer.style.opacity === '1') {
-        menuContainer.style.opacity = '0';
-        menuContainer.style.pointerEvents = 'none';
-    } else {
-        menuContainer.style.opacity = '1';
-        menuContainer.style.pointerEvents = 'auto';
-    }
-
     menuIcon.classList.toggle('fa-xmark');
     menuContainer.classList.toggle('deploy')
 });

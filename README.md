@@ -91,6 +91,6 @@ If you have any questions or feedback, feel free to reach out:
 
 - **GitHub**: [Saterz](https://github.com/Saterz)
 
-- **Discord**: [655805199801385007](https://discordapp.com/users/655805199801385007)
+- **Discord**: [@saterz_](https://discordapp.com/users/655805199801385007)
 
 ---

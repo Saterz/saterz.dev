@@ -1,6 +1,8 @@
 /* Import Google Fonts for custom typography */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap');
 
 /* Universal reset for consistent styling */
 * {
@@ -53,6 +55,14 @@ nav {
   font-family: 'Young Serif', serif;
   font-size: 3.2rem;
   margin-bottom: 2.4rem;
+}
+
+.version-title {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 0;
+  font-size: 2.4rem;
 }
 
 .section {
@@ -114,10 +124,9 @@ footer {
 
 .card-version {
   display: flex;
-  flex-direction: row; /* Or change to column in your media query */
+  flex-direction: row;
   width: 75vw;
-  /* Remove the fixed height so it’s determined by its children */
-  padding: 1.5rem;
+  padding: 2rem;
   transition: 0.3s ease;
   border-radius: 10px;
   box-shadow: 0 1.5rem 2.5rem rgba(129, 124, 124, 0.2);
@@ -182,5 +191,9 @@ footer {
 
   .card-version-content {
     padding: 0rem;
+  }
+
+  .version-title {
+    margin-top: 1rem;
   }
 }
