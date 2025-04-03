@@ -1,10 +1,6 @@
 console.log('Pk t\'es dans la console ?');
 console.log('Tqt pas, y\'a pas d\'erreur');
 
-$(document).ready(function() {
-    $('.image-link').magnificPopup({type:'image'});
-});
-
 // Menu button
 const menuButton = document.querySelector('.button.menu');
 const menuIcon = document.querySelector('.fa-bars');
@@ -79,11 +75,8 @@ function animate() {
 // Start the animation loop
 animate();
 
-// Image popup
+// Expand images
 
-$('.image-expandable').magnificPopup({
-    items: {
-      src: 'https://beeneverywhere.net/staticmap/14542.png'
-    },
-    type: 'image' // this is default type
-});
+const image = document.querySelector('.image');
+console.log(image)
+
