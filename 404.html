@@ -1,36 +1,50 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
-  <!-- Unami Analytics -->
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="14a3468f-cac2-44a8-996e-c8ed32156037"></script>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page introuvable</title>
-  <link rel="icon" type="image/x-icon" href="/pictures/icone.ico">
-  <meta name="description" content="Site de Saterz">
-  <link rel="stylesheet" href="404 style.css">
-  <script src="script.js"></script>
-  <script src="https://kit.fontawesome.com/bfa978807b.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saterz's Studio</title>
+  <link rel="stylesheet" href="assets/css/404.css">
+  <link rel="stylesheet" href="assets/css/modern-normalize.css">
+  <link rel="icon" type="image/x-icon" href="assets/images/icone.ico">
 </head>
 
 <body>
-  <header>
-    <h1 id="titre_principale">Saterz's Website</h1>
-  </header>
 
-  <section class="hero">
-    <h2 class="titres">Tu t'es perdu ?</h2>
-    <p>T'as fait comment ? Il y a seulement qu'une seule page, en tout cas normalement...</p>
-    <br><br>
-    <a href="https://saterz.github.io">Revenir en terre protégé</a>
+  <div class="floating ring"></div>
+  <div class="floating ball"></div>
+
+  <nav>
+    <div>
+      <h1 id="main_title">Saterz's Website</h1>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="container">
+      <img src="assets/images/page_not_found.webp" alt="Page not found image">
+      <div class="container content">
+        <h2 class="titles"></h2>
+        <a data-umami-event="Refresh button" onClick="window.location.reload();">Refresh for goodies</a>
+        <a href="/">Go back to sanctuary</a>
+      </div>
+    </div>
   </section>
 
+  <!-- Footer with copyright and version information -->
   <footer>
-    <p id="copyright">© 2023 Saterz</p><a href="https://github.com/Saterz/saterz.github.io" target="_blank"
-      id="opensource">Source on GitHub</a>
+    <div id="copyright-container">
+      <p id="copyright">&copy; 2023-2025 Saterz</p>
+    </div>
+    <div id="opensource-container">
+      <a href="https://github.com/Saterz/saterz.github.io" target="_blank" id="opensource" data-umami-event="Opensource link">Source on GitHub</a>
+    </div>
   </footer>
+
+  <!-- Umami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="14a3468f-cac2-44a8-996e-c8ed32156037"></script>
+  <script src="assets/js/404.js" defer></script>
 </body>
 
 </html>

@@ -1,12 +1,8 @@
 /* Import Google Fonts for custom typography */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-
-@media (max-width: 414px) {
-  footer {
-    flex-direction: column;
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap');
 
 /* Universal reset for consistent styling */
 * {
@@ -29,8 +25,7 @@ html {
 /* Global body styles */
 body {
   font-family: 'Tilt Neon', sans-serif;
-  margin: 0;
-  padding: 0;
+  font-size: 1.6rem;
   overflow-x: hidden;
   transition: 0.3s ease;
 }
@@ -42,17 +37,6 @@ body {
   font-size: 8rem;
 }
 
-#version-picker {
-  margin: 3rem;
-  text-align: center;
-}
-
-#version-picker p {
-  margin: 0 2rem;
-  display: inline-block;
-  font-size: 3.6rem;
-}
-
 nav {
   top: 0;
   width: 100%;
@@ -61,8 +45,8 @@ nav {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 0.1rem solid black;
   padding: 2rem 3rem;
-  background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(14px);
   transition: 0.4s ease;
 }
@@ -73,7 +57,20 @@ nav {
   margin-bottom: 2.4rem;
 }
 
-#version-container {
+.version-title {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 0;
+  font-size: 2.4rem;
+}
+
+.section {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -84,33 +81,14 @@ nav {
   text-align: center;
 }
 
-.version-card {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 1.5rem 2.5rem rgba(129, 124, 124, 0.2);
-  border-radius: 1.5rem;
-  padding: 2.4rem;
-  max-width: 35rem;
-  flex: 1 1 30rem;
-  transition: 0.3s ease;
-}
-
-.version-card:hover {
-  transform: translateY(-0.5rem);
-  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
-}
-
 /* Footer styles */
 footer {
-  font-size: 1.6rem;
   padding: 1rem 2rem;
-  width: 100%;
-  position: fixed;
   bottom: 0;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(14px);
   transition: 0.4s ease;
+  border-top: 0.1rem solid black;
+  backdrop-filter: blur(14px);
 }
 
 /* Footer elements alignment */
@@ -122,4 +100,100 @@ footer {
 #opensource-container {
   text-align: right;
   flex: 1;
+}
+
+#opensource {
+  text-decoration: underline;
+}
+
+#opensource:hover {
+  text-decoration: none;
+}
+
+.footer.version {
+  padding: 1rem 2rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-top: 0.1rem solid black;
+  backdrop-filter: blur(14px);
+  transition: 0.4s ease;
+}
+
+.card-version {
+  display: flex;
+  flex-direction: row;
+  width: 75vw;
+  padding: 2rem;
+  transition: 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 1.5rem 2.5rem rgba(129, 124, 124, 0.2);
+}
+
+.card-version:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+/* Make the image container flex-grow and maintain a desired aspect ratio */
+.card-version-image {
+  flex: 1;
+  position: relative;
+}
+
+/* Use a pseudo-element to enforce a 16:9 aspect ratio (adjust as needed) */
+.card-version-image::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 ratio; use 75% for 4:3, etc. */
+}
+
+/* The content area can also use flex to fill available space */
+.card-version-content {
+  flex: 1;
+  padding: 0 5rem;
+}
+
+.version-content {
+  text-align: left;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-top: 3rem;
+}
+
+/* Position the actual image absolutely so it fills the container */
+.card-version-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.underbold {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#actuslink {
+  color: blue;
+}
+
+@media (max-width: 768px) {
+  .card-version {
+    flex-direction: column;
+    width: 75vw;
+    /* Height is now determined by the image’s aspect ratio and the content below */
+  }
+
+  .card-version-content {
+    padding: 0rem;
+  }
+
+  .version-title {
+    margin-top: 1rem;
+  }
 }
