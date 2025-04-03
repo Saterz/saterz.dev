@@ -12,8 +12,8 @@ You can visit the live version of the website here: [saterz.github.io](https://s
 
 This website is a personal portfolio where I share:
 
-- My identity, origins, and interests.
-- A showcase of my completed projects.
+- Myself.
+- A showcase of my projects.
 - Future project ideas.
 - Links to my social media platforms.
 - Fun facts and miscellaneous information about me.
@@ -26,9 +26,7 @@ This website is a personal portfolio where I share:
 
 - **HTML5**: For structuring the content.
 - **CSS3**: For styling and layout.
-  - Includes custom animations and responsive design.
 - **JavaScript**: For interactivity and dynamic features.
-  - Includes jQuery and Magnific Popup for image handling.
 
 ### Libraries & Tools
 
@@ -51,17 +49,12 @@ This website is a personal portfolio where I share:
     └── js
         ├── script.js                # Main JavaScript file
         └── jquery.magnific-popup.js # Magnific Popup library
+/fr                ┐
+/studio            │
+/v1                ├      # The different pages of the website
+/v2                │
+/version-picker    ┘
 ```
-
----
-
-## 🚀 Features
-
-- **Interactive Navigation**: A responsive menu with smooth animations.
-- **Floating Animations**: Dynamic ball and ring animations that follow the cursor.
-- **Project Showcase**: Cards displaying my completed and future projects.
-- **Social Media Links**: Quick access to my profiles on platforms like GitHub, Discord, and more.
-- **Responsive Design**: Optimized for various screen sizes.
 
 ---
 
@@ -75,7 +68,7 @@ This website is a personal portfolio where I share:
 
 ## 📜 License
 
-This project is open-source and available under the [MIT License](LICENSE).
+This project is open-source and available under the [Apache-2.0 License](LICENSE).
 
 ---
 
