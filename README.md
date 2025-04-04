@@ -4,7 +4,7 @@ Welcome to the repository for **Saterz's Website**! This is my personal portfoli
 
 ## 🌐 Live Website
 
-You can visit the live version of the website here: [saterz.github.io](https://saterz.github.io)
+You can visit the live version of the website here: [saterz.dev](https://saterz.dev)
 
 ---
 
