@@ -12,11 +12,9 @@ You can visit the live version of the website here: [saterz.dev](https://saterz.
 
 This website is a personal portfolio where I share:
 
-- Myself.
-- A showcase of my projects.
-- Future project ideas.
-- Links to my social media platforms.
-- Fun facts and miscellaneous information about me.
+- Info on myself.
+- My projects and future projects ideas.
+- My social media links.
 
 ---
 
@@ -24,16 +22,16 @@ This website is a personal portfolio where I share:
 
 ### Frontend
 
-- **HTML5**: For structuring the content.
-- **CSS3**: For styling and layout.
-- **JavaScript**: For interactivity and dynamic features.
+- **HTML5**
+- **CSS3**
+- **JavaScript**
 
 ### Libraries & Tools
 
-- **Font Awesome**: For icons.
-- **Google Fonts**: For custom typography.
-- **Magnific Popup**: For image popups.
-- **Umami Analytics**: For tracking website usage.
+- **Font Awesome**
+- **Google Fonts**
+- **Magnific Popup**
+- **Umami Analytics**
 
 ---
 
