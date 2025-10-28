@@ -1,0 +1,225 @@
+/* Import Google Fonts for custom typography */
+
+/* Font : VT323 */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+/* Font : Young Serif */
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+/* Font : Tilt Neon */
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+/* Font : Crimson Text */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap');
+/* Font : Climate Crisis */
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+
+:root {
+  --primary-color: black;
+  --background-color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Default link styles */
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+img {
+  border-radius: 10px;
+  height: auto;
+  width: 80vh;
+  min-width: 40vw;
+}
+
+/* Confetti container covers the entire viewport */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+/* Each confetto style */
+.confetto {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0.9;
+  transform: translateY(0) rotate(0deg);
+  animation: confetti-fall 3s ease-out forwards;
+}
+
+/* Keyframes for falling confetti */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Example of the wobbly animation */
+@keyframes professionalAnim {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  40% {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  60% {
+    transform: scale(0.98);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  }
+  80% {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+/* Global body styles */
+body {
+  font-family: 'Tilt Neon', sans-serif;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  overflow-x: hidden;
+  transition: 0.3s ease;
+}
+
+nav {
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1rem solid var(--primary-color);
+  padding: 2rem 3rem;
+  backdrop-filter: blur(14px);
+  transition: 0.3s ease;
+}
+
+/* Main title styling */
+#main_title {
+  font-family: 'VT323', monospace;
+  font-size: 8rem;
+}
+
+#content {
+  z-index: 0;
+  position: absolute;
+  /*margin-top: 50%;*/
+}
+
+/* Content box titles */
+.title {
+  font-family: "Crimson Text", serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 0;
+  font-size: 2.4rem;
+}
+
+/* Content box paragraphs */
+.content {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+/* About and portfolio sections */
+section {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+/* Project cards container */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 4rem 2rem;
+  text-align: center;
+}
+
+.container.content {
+  flex-direction: column;
+}
+
+.container a {
+  padding: 3rem;
+  border: solid 0.1rem black;
+  border-radius: 25px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.container a:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s ease;
+}
+
+/* Titles font family */
+.titles {
+  font-family: 'Young Serif', serif;
+  font-size: 3.2rem;
+  margin-bottom: 2.4rem;
+  margin: 0 1rem;
+}
+
+/* Footer styles */
+footer {
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  transition: 0.4s ease;
+  border-top: 0.1rem solid black;
+  backdrop-filter: blur(14px);
+}
+
+/* Footer elements alignment */
+#copyright-container {
+  order: 1;
+  flex: 1;
+  text-align: left;
+}
+
+#opensource-container {
+  order: 2;
+  flex: 1;
+  text-align: right;
+}
+
+#opensource {
+  text-decoration: underline;
+}
+
+#opensource:hover {
+  text-decoration: none;
+}
