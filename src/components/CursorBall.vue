@@ -13,7 +13,7 @@ const ringX = ref(0),
 let raf: number | null = null
 
 const A_BALL = 0.5
-const A_RING = 0.15
+const A_RING = 0.1
 
 const isInteractive = ref(false)
 const hasMoved = ref(false)
