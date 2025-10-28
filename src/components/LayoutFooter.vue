@@ -8,11 +8,11 @@ const currentYear = new Date().getFullYear()
       <div class="flex-1">&copy; 2023-{{ currentYear }} Saterz</div>
       <div class="flex-1 sm:justify-center flex">
         <span>
-          v4 -<RouterLink to="/previous"> View previous versions of this website</RouterLink>
+          v4 - <RouterLink to="/previous" class="underline">View previous versions of this website</RouterLink>
         </span>
       </div>
       <div class="flex-1 sm:justify-end flex">
-        <a href="https://github.com/Saterz/saterz.dev">Source on Github</a>
+        <a href="https://github.com/Saterz/saterz.dev" class="underline">Source on Github</a>
       </div>
     </div>
   </footer>
