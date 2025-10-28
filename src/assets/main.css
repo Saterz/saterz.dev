@@ -1,0 +1,18 @@
+﻿@import 'tailwindcss';
+@import './base.css';
+
+@font-face {
+  font-family: 'Sligoil';
+  src: url('./SligoilVF.woff2') format('woff2-variations'),
+    url('./SligoilVF.woff2') format('woff2'),
+    url('./SligoilVF.woff') format('woff'),
+    url('./SligoilVF.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@theme {
+  --font-sligoil: "Sligoil", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "Sligoil", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
