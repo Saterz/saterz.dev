@@ -1,45 +1,37 @@
-# saterz
+# Saterz's Website
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to the repository for **Saterz's Website**! This is my personal portfolio showcasing my projects, interests, and more.
 
-## Recommended IDE Setup
+## 🌐 Live Website
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+You can visit the live version of the website here: [saterz.dev](https://saterz.dev)
 
-## Type Support for `.vue` Imports in TS
+## 🛠️ Technologies Used
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Frontend
 
-## Customize configuration
+- **Vue**
+- **Tailwind**
+- **Typescript**
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 📸 Screenshots
 
-## Project Setup
+### Homepage
 
-```sh
-npm install
-```
+![Homepage Screenshot](public/website-v4.webp)
 
-### Compile and Hot-Reload for Development
+## 📜 License
 
-```sh
-npm run dev
-```
+This project is open-source and available under the [Apache-2.0 License](LICENSE).
 
-### Type-Check, Compile and Minify for Production
+## 🤝 Contributing
 
-```sh
-npm run build
-```
+Feel free to fork this repository and submit pull requests for improvements or suggestions.
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## 📧 Contact
 
-```sh
-npm run test:unit
-```
+If you have any feedback, feel free to reach out:
 
-### Lint with [ESLint](https://eslint.org/)
+- **GitHub**: [Saterz](https://github.com/Saterz)
 
-```sh
-npm run lint
-```
+- **Discord**: [@saterz_](https://discordapp.com/users/655805199801385007)
