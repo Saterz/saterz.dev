@@ -11,7 +11,7 @@ function onScroll() {
   if (!ticking) {
     window.requestAnimationFrame(() => {
       const y = window.scrollY || document.documentElement.scrollTop
-      const goingDown = y > lastY - 8
+      const goingDown = y > lastY
       isHidden.value = goingDown && y > 80
       lastY = y
       ticking = false
