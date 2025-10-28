@@ -2,8 +2,7 @@
 const currentYear = new Date().getFullYear()
 </script>
 <template>
-  <footer
-    class="sm:fixed bottom-0 w-full p-3 backdrop-blur-2xl">
+  <footer class="sm:fixed bottom-0 w-full p-3 backdrop-blur-2xl">
     <div class="mix-blend-difference flex gap-3 flex-col-reverse sm:flex-row">
       <div class="flex-1">&copy; 2023-{{ currentYear }} Saterz</div>
       <div class="flex-1 sm:justify-center flex">
@@ -12,7 +11,7 @@ const currentYear = new Date().getFullYear()
         </span>
       </div>
       <div class="flex-1 sm:justify-end flex">
-        <a href="https://github.com/Saterz/saterz.dev" class="underline">Source on Github</a>
+        <a href="https://github.com/Saterz/saterz.dev" class="underline" target="_blank" rel="noopener noreferrer">Source on Github</a>
       </div>
     </div>
   </footer>
