@@ -2,6 +2,7 @@
 import websiteV1Img from '@/assets/website-v1.webp'
 import websiteV2Img from '@/assets/website-v2.webp'
 import websiteV3Img from '@/assets/website-v3.webp'
+import websiteV4Img from '@/assets/website-v4.webp'
 
 const versions: {
   version: number
@@ -44,6 +45,17 @@ const versions: {
         'This version came to life because of the background animation of the previous one, it was too complicated to make it responsive across different screen sizes so I decided to ditched it.',
       link: '/v3/',
       src: 'https://github.com/Saterz/saterz.dev/tree/v3',
+      sep: true
+    },
+    {
+      version: 4,
+      name: 'Incoming...',
+      img: websiteV4Img,
+      release: 'Xyz 00, 0000',
+      fun_fact:
+        'A complete rewrite in Vue. Coming soon...',
+      link: '/',
+      src: 'https://github.com/Saterz/saterz.dev/tree/main',
       sep: false
     },
   ]
