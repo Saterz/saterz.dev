@@ -8,8 +8,10 @@
   },
   "scripts": {
     "dev": "vite",
+    "dev-host": "vite --host",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
+    "preview-host": "vite preview --host",
     "test:unit": "vitest",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
@@ -17,6 +19,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "@tailwindcss/vite": "^4.1.13",
+    "picomatch": "^4.0.3",
+    "tailwindcss": "^4.1.13",
+    "unplugin-utils": "^0.3.1",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },
