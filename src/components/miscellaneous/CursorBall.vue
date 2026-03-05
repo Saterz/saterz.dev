@@ -5,20 +5,19 @@ import { onMounted, onUnmounted, ref } from 'vue'
 const INTERACTIVE_ELEMENTS = 'a, button, [expand-ball="true"]'
 
 // Pointer coordinates captured from the latest pointer move event.
-const cursX = ref(0),
-  cursY = ref(0)
+const cursX = ref(0), cursY = ref(0)
 // Animated ball coordinates that ease toward the pointer target.
-const ballX = ref(0),
-  ballY = ref(0)
+const ballX = ref(0), ballY = ref(0)
 // Ring coordinates that trail the pointer position.
-const ringX = ref(0),
-  ringY = ref(0)
+const ringX = ref(0), ringY = ref(0)
 
 let raf: number | null = null
 
 // Easing coefficients for the ball fill and outer ring.
 const A_BALL = 1
-const A_RING = 0.1
+const A_RING = 0.3
+
+const EASING = 0.25
 
 // Cursor state flags that drive visibility and motion preferences.
 const isInteractive = ref(false)
@@ -123,8 +122,8 @@ function tick() {
   ballX.value += (targetX - ballX.value) * A_BALL
   ballY.value += (targetY - ballY.value) * A_BALL
 
-  ballHeightSize.value += (targetHeightSize.value - ballHeightSize.value) * 0.15
-  ballWidthSize.value += (targerWidthSize.value - ballWidthSize.value) * 0.15
+  ballHeightSize.value += (targetHeightSize.value - ballHeightSize.value) * EASING
+  ballWidthSize.value += (targerWidthSize.value - ballWidthSize.value) * EASING
 
   ringX.value += (cursX.value - ringX.value) * A_RING
   ringY.value += (cursY.value - ringY.value) * A_RING

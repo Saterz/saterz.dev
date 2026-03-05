@@ -2,7 +2,7 @@
 import { RouterView } from 'vue-router'
 import LayoutNavbar from './components/LayoutNavbar.vue'
 import LayoutFooter from './components/LayoutFooter.vue'
-import CursorBall from './components/CursorBall.vue'
+import CursorBall from './components/miscellaneous/CursorBall.vue'
 </script>
 
 <template>
