@@ -3,7 +3,11 @@ import { onMounted, onUnmounted, ref } from 'vue'
 
 const INTERACTIVE_ELEMENT_SELECTOR = 'a, button, [expand-ball]'
 
+
+const BASE_SIZE = 20
+const SIZE_EPSILON = 0.1
 const SIZE_EASING = 0.25
+
 const BALL_POSITION_EASING = 1
 const RING_POSITION_EASING = 0.3
 
@@ -27,13 +31,8 @@ function handleMotionChange(event?: MediaQueryListEvent) {
   if (prefersReducedMotion.value) {
     if (raf !== null) cancelAnimationFrame(raf)
     raf = null
-  } else {
-    if (raf === null) raf = requestAnimationFrame(tick)
   }
 }
-
-
-const BASE_SIZE = 20
 
 const hoveredRect = ref<DOMRect | null>(null)
 const ballBorderRadius = ref('9999px')
@@ -73,17 +72,19 @@ function measureHoveredElement() {
 }
 
 function clearActive() {
-  hoveredElement = null
-  hoveredRect.value = null
   targetBallHeight.value = BASE_SIZE
   targetBallWidth.value = BASE_SIZE
   isInteractive.value = false
   ballBorderRadius.value = '9999px'
   ballClipPath.value = 'none'
+  hoveredRect.value = null
+  hoveredElement = null
 }
 
 function onPointerOver(e: PointerEvent) {
-  const targetElement = (e.target as Element | null)?.closest(INTERACTIVE_ELEMENT_SELECTOR) as HTMLElement | null
+  const targetElement = (e.target as Element | null)?.closest(
+    INTERACTIVE_ELEMENT_SELECTOR,
+  ) as HTMLElement | null
   if (!targetElement || targetElement === hoveredElement) return
   hoveredElement = targetElement
   isInteractive.value = true
@@ -114,11 +115,23 @@ function tick() {
     ? hoveredRect.value.top + hoveredRect.value.height / 2
     : pointerY.value
 
-  ballX.value += (targetX - ballX.value) * BALL_POSITION_EASING
-  ballY.value += (targetY - ballY.value) * BALL_POSITION_EASING
+  // 
+  const isMorphing =
+    hoveredRect.value !== null ||
+    Math.abs(ballHeight.value - BASE_SIZE) > SIZE_EPSILON ||
+    Math.abs(ballWidth.value - BASE_SIZE) > SIZE_EPSILON
+  const positionEasing = isMorphing ? SIZE_EASING : BALL_POSITION_EASING
+
+  ballX.value += (targetX - ballX.value) * positionEasing
+  ballY.value += (targetY - ballY.value) * positionEasing
 
   ballHeight.value += (targetBallHeight.value - ballHeight.value) * SIZE_EASING
   ballWidth.value += (targetBallWidth.value - ballWidth.value) * SIZE_EASING
+
+  if (!hoveredRect.value && !isMorphing) {
+    ballHeight.value = BASE_SIZE
+    ballWidth.value = BASE_SIZE
+  }
 
   ringX.value += (pointerX.value - ringX.value) * RING_POSITION_EASING
   ringY.value += (pointerY.value - ringY.value) * RING_POSITION_EASING
