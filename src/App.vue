@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import LayoutNavbar from './components/LayoutNavbar.vue'
-import LayoutFooter from './components/LayoutFooter.vue'
 import CursorBall from './components/miscellaneous/CursorBall.vue'
+// import LayoutNavbar from './components/LayoutNavbar.vue';
 </script>
 
 <template>
   <CursorBall />
 
-  <LayoutNavbar />
-  <main class="min-h-screen pt-[var(--layout-main-padding-top)] pb-[var(--layout-main-padding-bottom)]">
+  <!-- <LayoutNavbar /> -->
+
+  <main class="main-app">
     <RouterView />
   </main>
-  <LayoutFooter />
 </template>
+
+<style>
+.main-app {
+  margin: auto;
+  min-height: 100dvh;
+  max-width: 80dvw;
+}
+</style>
