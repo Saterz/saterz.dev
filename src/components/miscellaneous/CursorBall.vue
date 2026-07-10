@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
 const INTERACTIVE_ELEMENT_SELECTOR = 'a, button, [expand-ball]'
-
+const route = useRoute()
 
 const BASE_SIZE = 20
 const SIZE_EPSILON = 0.1
@@ -81,6 +82,13 @@ function clearActive() {
   hoveredElement = null
 }
 
+watch(
+  () => route.fullPath,
+  () => {
+    clearActive()
+  },
+)
+
 function onPointerOver(e: PointerEvent) {
   const targetElement = (e.target as Element | null)?.closest(
     INTERACTIVE_ELEMENT_SELECTOR,
@@ -115,7 +123,7 @@ function tick() {
     ? hoveredRect.value.top + hoveredRect.value.height / 2
     : pointerY.value
 
-  // 
+  //
   const isMorphing =
     hoveredRect.value !== null ||
     Math.abs(ballHeight.value - BASE_SIZE) > SIZE_EPSILON ||
