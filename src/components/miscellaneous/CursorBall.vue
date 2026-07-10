@@ -123,7 +123,6 @@ function tick() {
     ? hoveredRect.value.top + hoveredRect.value.height / 2
     : pointerY.value
 
-  //
   const isMorphing =
     hoveredRect.value !== null ||
     Math.abs(ballHeight.value - BASE_SIZE) > SIZE_EPSILON ||
