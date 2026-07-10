@@ -11,7 +11,6 @@ You can visit the live version of the website here: [saterz.dev](https://saterz.
 ### Frontend
 
 - **Vue**
-- **Tailwind**
 - **Typescript**
 
 ## 📸 Screenshots
