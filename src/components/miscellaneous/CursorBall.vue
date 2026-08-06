@@ -21,8 +21,8 @@ const ringX = ref(0),
 
 let raf: number | null = null
 
-const isInteractive = ref(false)
 const hasPointerMoved = ref(false)
+
 const prefersReducedMotion = ref(false)
 let motionMql: MediaQueryList | null = null
 
@@ -35,7 +35,6 @@ function handleMotionChange(event?: MediaQueryListEvent) {
   }
 }
 
-const hoveredRect = ref<DOMRect | null>(null)
 const ballBorderRadius = ref('9999px')
 const ballClipPath = ref('none')
 
@@ -46,40 +45,36 @@ const ballHeight = ref<number>(BASE_SIZE)
 const ballWidth = ref<number>(BASE_SIZE)
 
 let hoveredElement: HTMLElement | null = null
+let hoveredRect: DOMRect | null = null
 
+/**
+ * Measures the size and position of the element being hovered by the cursor and by consequence the ball itself (the ball is always at the same position than the cursor)
+ */
 function measureHoveredElement() {
-  if (!hoveredElement) {
-    hoveredRect.value = null
-    return
-  }
+  if (!hoveredElement) return
 
-  hoveredRect.value = hoveredElement.getBoundingClientRect()
-  if (hoveredRect.value) {
-    targetBallHeight.value = hoveredRect.value.height
-    targetBallWidth.value = hoveredRect.value.width
-  }
 
-  const computedStyle = getComputedStyle(hoveredElement)
-  const borderRadius = [
-    computedStyle.borderTopLeftRadius,
-    computedStyle.borderTopRightRadius,
-    computedStyle.borderBottomRightRadius,
-    computedStyle.borderBottomLeftRadius,
+  const rect = (hoveredRect = hoveredElement.getBoundingClientRect())
+  targetBallHeight.value = rect.height
+  targetBallWidth.value = rect.width
+
+
+  const style = getComputedStyle(hoveredElement)
+  ballBorderRadius.value = [
+    style.borderTopLeftRadius,
+    style.borderTopRightRadius,
+    style.borderBottomRightRadius,
+    style.borderBottomLeftRadius,
   ].join(' ')
-  ballBorderRadius.value = borderRadius
-
-  const clipPath = computedStyle.clipPath
-  ballClipPath.value = clipPath && clipPath !== 'none' ? clipPath : 'none'
+  ballClipPath.value = style.clipPath
 }
 
 function clearActive() {
-  targetBallHeight.value = BASE_SIZE
-  targetBallWidth.value = BASE_SIZE
-  isInteractive.value = false
+  hoveredElement = null
+  hoveredRect = null
+  targetBallHeight.value = targetBallWidth.value = BASE_SIZE
   ballBorderRadius.value = '9999px'
   ballClipPath.value = 'none'
-  hoveredRect.value = null
-  hoveredElement = null
 }
 
 watch(
@@ -95,7 +90,6 @@ function onPointerOver(e: PointerEvent) {
   ) as HTMLElement | null
   if (!targetElement || targetElement === hoveredElement) return
   hoveredElement = targetElement
-  isInteractive.value = true
   measureHoveredElement()
 }
 
@@ -116,15 +110,16 @@ function onScrollOrResize() {
 }
 
 function tick() {
-  const targetX = hoveredRect.value
-    ? hoveredRect.value.left + hoveredRect.value.width / 2
-    : pointerX.value
-  const targetY = hoveredRect.value
-    ? hoveredRect.value.top + hoveredRect.value.height / 2
-    : pointerY.value
+  let targetX = pointerX.value
+  let targetY = pointerY.value
+
+  if (hoveredRect) {
+    targetX = hoveredRect.left + hoveredRect.width / 2
+    targetY = hoveredRect.top + hoveredRect.height / 2
+  }
 
   const isMorphing =
-    hoveredRect.value !== null ||
+    hoveredRect !== null ||
     Math.abs(ballHeight.value - BASE_SIZE) > SIZE_EPSILON ||
     Math.abs(ballWidth.value - BASE_SIZE) > SIZE_EPSILON
   const positionEasing = isMorphing ? SIZE_EASING : BALL_POSITION_EASING
@@ -135,7 +130,7 @@ function tick() {
   ballHeight.value += (targetBallHeight.value - ballHeight.value) * SIZE_EASING
   ballWidth.value += (targetBallWidth.value - ballWidth.value) * SIZE_EASING
 
-  if (!hoveredRect.value && !isMorphing) {
+  if (!hoveredRect && !isMorphing) {
     ballHeight.value = BASE_SIZE
     ballWidth.value = BASE_SIZE
   }
@@ -181,12 +176,12 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="cursor cursor-ring"
-    :class="{ 'cursor--visible': hasPointerMoved, 'cursor--interactive-hidden': isInteractive }" :style="{
+  <div id="ring" class="cursor cursor-ring"
+    :class="{ 'cursor--visible': hasPointerMoved, 'cursor--interactive-hidden': hoveredRect }" :style="{
       left: ringX + 'px',
       top: ringY + 'px',
     }"></div>
-  <div class="cursor cursor-blob" :class="{ 'cursor--visible': hasPointerMoved }" :style="{
+  <div id="ball" ref="ballElement" class="cursor cursor-blob" :class="{ 'cursor--visible': hasPointerMoved }" :style="{
     width: `${ballWidth}px`,
     height: `${ballHeight}px`,
     left: ballX + 'px',
@@ -203,7 +198,7 @@ onUnmounted(() => {
   display: none;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  transition: transform 150ms ease-out;
+  transition: transform 150ms cubic-bezier(1, 0, 0, 1);
   mix-blend-mode: difference;
   will-change: transform;
 }
