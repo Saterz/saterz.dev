@@ -2,22 +2,30 @@
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
+/** 
+ * The HTML elements the ball should take the shape of.  
+ * Currently it should take the shape of a `<a>link</a>`, `<button>button</button>`, and any other element marked with the `expand-ball` property `<img expand-ball></img>`
+ */
 const INTERACTIVE_ELEMENT_SELECTOR = 'a, button, [expand-ball]'
 const route = useRoute()
 
+/** The ball base size */
 const BASE_SIZE = 20
+/** The lowest difference between the ball's actual size and it's base size to determine if it's morphing */
 const SIZE_EPSILON = 0.1
 const SIZE_EASING = 0.25
 
 const BALL_POSITION_EASING = 1
 const RING_POSITION_EASING = 0.3
 
-const pointerX = ref(0),
-  pointerY = ref(0)
-const ballX = ref(0),
-  ballY = ref(0)
-const ringX = ref(0),
-  ringY = ref(0)
+const pointerX = ref(0)
+const pointerY = ref(0)
+
+const ballX = ref(0)
+const ballY = ref(0)
+
+const ringX = ref(0)
+const ringY = ref(0)
 
 let raf: number | null = null
 
@@ -48,13 +56,13 @@ let hoveredElement: HTMLElement | null = null
 let hoveredRect: DOMRect | null = null
 
 /**
- * Measures the size and position of the element being hovered by the cursor and by consequence the ball itself (the ball is always at the same position than the cursor)
+ * Measures the size and position of the element being hovered by the cursor
  */
 function measureHoveredElement() {
   if (!hoveredElement) return
 
-
-  const rect = (hoveredRect = hoveredElement.getBoundingClientRect())
+  // We create a rect variable to not have to manage the null value from hoveredRect
+  const rect = hoveredRect = hoveredElement.getBoundingClientRect()
   targetBallHeight.value = rect.height
   targetBallWidth.value = rect.width
 
@@ -69,6 +77,7 @@ function measureHoveredElement() {
   ballClipPath.value = style.clipPath
 }
 
+/** Resets the ball's size and radius values */
 function clearActive() {
   hoveredElement = null
   hoveredRect = null
@@ -84,6 +93,7 @@ watch(
   },
 )
 
+/** Makes the ball take the shape of the hovered element if it's interactive */
 function onPointerOver(e: PointerEvent) {
   const targetElement = (e.target as Element | null)?.closest(
     INTERACTIVE_ELEMENT_SELECTOR,
@@ -93,18 +103,21 @@ function onPointerOver(e: PointerEvent) {
   measureHoveredElement()
 }
 
+/** When the user stops hovering the element, it reset the ball values  */
 function onPointerOut(e: PointerEvent) {
   const related = e.relatedTarget as Element | null
   if (hoveredElement && related && hoveredElement.contains(related)) return
   clearActive()
 }
 
+/** Sets the pointerX and pointerY values to the cursor coordinates when moving. */
 function onPointerMove(e: MouseEvent) {
   pointerX.value = e.clientX
   pointerY.value = e.clientY
   hasPointerMoved.value = true
 }
 
+/** Recalculates the hovered element size and position when scrolling or resizing the viewport to make the expanded ball always stick to actual element size */
 function onScrollOrResize() {
   if (hoveredElement) measureHoveredElement()
 }
@@ -118,10 +131,12 @@ function tick() {
     targetY = hoveredRect.top + hoveredRect.height / 2
   }
 
+  /** Defines if the size of the ball is actively changing */
   const isMorphing =
     hoveredRect !== null ||
     Math.abs(ballHeight.value - BASE_SIZE) > SIZE_EPSILON ||
     Math.abs(ballWidth.value - BASE_SIZE) > SIZE_EPSILON
+  // Sets the position value to SIZE_EASING if morphing to have a smooth animation and to BALL_POSITION_EASING if not for the ball to instantly follow the cursor. (Which does not seem to be the case now for some reason???)
   const positionEasing = isMorphing ? SIZE_EASING : BALL_POSITION_EASING
 
   ballX.value += (targetX - ballX.value) * positionEasing
@@ -130,6 +145,7 @@ function tick() {
   ballHeight.value += (targetBallHeight.value - ballHeight.value) * SIZE_EASING
   ballWidth.value += (targetBallWidth.value - ballWidth.value) * SIZE_EASING
 
+  // Directly set the ball's height and width to the base size if no element is hovered and it's not morphing.
   if (!hoveredRect && !isMorphing) {
     ballHeight.value = BASE_SIZE
     ballWidth.value = BASE_SIZE
@@ -181,6 +197,7 @@ onUnmounted(() => {
       left: ringX + 'px',
       top: ringY + 'px',
     }"></div>
+
   <div id="ball" ref="ballElement" class="cursor cursor-blob" :class="{ 'cursor--visible': hasPointerMoved }" :style="{
     width: `${ballWidth}px`,
     height: `${ballHeight}px`,
