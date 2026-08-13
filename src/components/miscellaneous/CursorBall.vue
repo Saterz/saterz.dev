@@ -2,11 +2,12 @@
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
-/** 
- * The HTML elements the ball should take the shape of.  
+/**
+ * The HTML elements the ball should take the shape of.
  * Currently it should take the shape of a `<a>link</a>`, `<button>button</button>`, and any other element marked with the `expand-ball` property `<img expand-ball></img>`
  */
 const INTERACTIVE_ELEMENT_SELECTOR = 'a, button, [expand-ball]'
+const HIDE_CURSOR_SELECTOR = 'canvas, [hide-cursor]'
 const route = useRoute()
 
 /** The ball base size */
@@ -30,6 +31,7 @@ const ringY = ref(0)
 let raf: number | null = null
 
 const hasPointerMoved = ref(false)
+const isCursorHidden = ref(false)
 
 const prefersReducedMotion = ref(false)
 let motionMql: MediaQueryList | null = null
@@ -62,10 +64,9 @@ function measureHoveredElement() {
   if (!hoveredElement) return
 
   // We create a rect variable to not have to manage the null value from hoveredRect
-  const rect = hoveredRect = hoveredElement.getBoundingClientRect()
+  const rect = (hoveredRect = hoveredElement.getBoundingClientRect())
   targetBallHeight.value = rect.height
   targetBallWidth.value = rect.width
-
 
   const style = getComputedStyle(hoveredElement)
   ballBorderRadius.value = [
@@ -95,6 +96,16 @@ watch(
 
 /** Makes the ball take the shape of the hovered element if it's interactive */
 function onPointerOver(e: PointerEvent) {
+  const hiddenElement = (e.target as Element | null)?.closest(HIDE_CURSOR_SELECTOR)
+
+  if (hiddenElement) {
+    isCursorHidden.value = true
+    clearActive()
+    return
+  }
+
+  isCursorHidden.value = false
+
   const targetElement = (e.target as Element | null)?.closest(
     INTERACTIVE_ELEMENT_SELECTOR,
   ) as HTMLElement | null
@@ -106,7 +117,12 @@ function onPointerOver(e: PointerEvent) {
 /** When the user stops hovering the element, it reset the ball values  */
 function onPointerOut(e: PointerEvent) {
   const related = e.relatedTarget as Element | null
+
+  if (related?.closest(HIDE_CURSOR_SELECTOR)) return
+  isCursorHidden.value = false
+
   if (hoveredElement && related && hoveredElement.contains(related)) return
+
   clearActive()
 }
 
@@ -192,20 +208,34 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div id="ring" class="cursor cursor-ring"
-    :class="{ 'cursor--visible': hasPointerMoved, 'cursor--interactive-hidden': hoveredRect }" :style="{
+  <div
+    id="ring"
+    class="cursor cursor-ring"
+    :class="{
+      'cursor--visible': hasPointerMoved,
+      'cursor--interactive-hidden': hoveredRect,
+      'cursor--hidden': isCursorHidden,
+    }"
+    :style="{
       left: ringX + 'px',
       top: ringY + 'px',
-    }"></div>
+    }"
+  ></div>
 
-  <div id="ball" ref="ballElement" class="cursor cursor-blob" :class="{ 'cursor--visible': hasPointerMoved }" :style="{
-    width: `${ballWidth}px`,
-    height: `${ballHeight}px`,
-    left: ballX + 'px',
-    top: ballY + 'px',
-    borderRadius: ballBorderRadius,
-    clipPath: ballClipPath,
-  }"></div>
+  <div
+    id="ball"
+    ref="ballElement"
+    class="cursor cursor-blob"
+    :class="{ 'cursor--visible': hasPointerMoved, 'cursor--hidden': isCursorHidden }"
+    :style="{
+      width: `${ballWidth}px`,
+      height: `${ballHeight}px`,
+      left: ballX + 'px',
+      top: ballY + 'px',
+      borderRadius: ballBorderRadius,
+      clipPath: ballClipPath,
+    }"
+  ></div>
 </template>
 
 <style>
@@ -230,6 +260,10 @@ onUnmounted(() => {
 .cursor-blob {
   border-radius: 9999px;
   background: white;
+}
+
+.cursor.cursor--hidden {
+  display: none;
 }
 
 @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
