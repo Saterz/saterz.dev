@@ -29,7 +29,7 @@ const props = withDefaults(
     radius: 24,
     scatterWidth: 500,
     tintAmount: 0.475,
-    asciiCharacters: '@%#*+=-:. '
+    asciiCharacters: '@%#*+=-:. ',
   },
 )
 
