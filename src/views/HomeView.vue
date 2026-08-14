@@ -91,7 +91,7 @@ getRecentlyFinished(10).then((animes) => {
             <p>{{ track.artist['#text'] }}</p>
           </div>
           <p
-            v-if="!track['@attr']?.nowplaying"
+            v-if="track['@attr']?.nowplaying === 'true'"
             class="home-music__now-playing u-no-flex-shrink"
             title="Now playing"
           >
