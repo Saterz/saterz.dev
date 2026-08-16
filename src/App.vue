@@ -7,8 +7,6 @@ import CursorBall from './components/miscellaneous/CursorBall.vue'
 <template>
   <CursorBall />
 
-  <!-- <LayoutNavbar /> -->
-
   <main class="main-app">
     <RouterView />
   </main>
