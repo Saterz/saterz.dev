@@ -64,16 +64,11 @@
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
+  text-decoration: none;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
-html {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+/*html {
+}*/
 
 body {
   min-height: 100vh;
@@ -88,4 +83,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: var(--color-text)
 }

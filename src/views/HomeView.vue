@@ -9,7 +9,7 @@ import { getLastFMImage, getRecentTracks } from '@/api/lastfm'
 import { computed, ref } from 'vue'
 import { ChartNoAxesColumn } from '@lucide/vue'
 
-const siteTitle = String.raw`
+const siteTitle = `
   █████████    █████████   ███████████ ██████████ ███████████   ███████████
  ███▒▒▒▒▒███  ███▒▒▒▒▒███ ▒█▒▒▒███▒▒▒█▒▒███▒▒▒▒▒█▒▒███▒▒▒▒▒███ ▒█▒▒▒▒▒▒███
 ▒███    ▒▒▒  ▒███    ▒███ ▒   ▒███  ▒  ▒███  █ ▒  ▒███    ▒███ ▒     ███▒
@@ -65,7 +65,7 @@ getRecentlyFinished(10).then((animes) => {
       <div class="home__bio">
         <h1 class="home-bio__title" aria-label="Saterz">{{ siteTitle }}</h1>
         <p class="home-bio__subtitle">
-          A {{ currentAge }}yo Caribbean-born bilingual aspiring developer, photographer and artist.
+          A {{ currentAge }}yo Caribbean-born bilingual aspiring developer, <a href="/photos">photographer</a> and artist.
         </p>
       </div>
     </div>
@@ -136,8 +136,12 @@ getRecentlyFinished(10).then((animes) => {
   white-space: pre;
   font-family: 'JetBrains Mono';
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 1;
+}
+
+.home-bio__subtitle {
+    font-size: 2rem;
 }
 
 .home__music {
