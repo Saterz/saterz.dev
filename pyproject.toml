@@ -1,0 +1,10 @@
+[project]
+name = "saterz-dev"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "exif>=1.6.1",
+    "geopy>=2.5.0",
+]

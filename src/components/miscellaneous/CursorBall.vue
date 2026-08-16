@@ -7,7 +7,7 @@ import { useRoute } from 'vue-router'
  * Currently it should take the shape of a `<a>link</a>`, `<button>button</button>`, and any other element marked with the `expand-ball` property `<img expand-ball></img>`
  */
 const INTERACTIVE_ELEMENT_SELECTOR = 'a, button, [expand-ball]'
-const HIDE_CURSOR_SELECTOR = 'canvas, [hide-cursor]'
+const HIDE_CURSOR_SELECTOR = 'canvas, [hide-ball]'
 const route = useRoute()
 
 /** The ball base size */
